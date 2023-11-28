@@ -1,6 +1,6 @@
 # Introduction to 2i2c
 
-The 2i2c service enable interactive commputing in the cloud.
+The 2i2c service enable interactive computing in the cloud.
 
 2i2c stands for The International Interactive Computing Collaboration.
 
