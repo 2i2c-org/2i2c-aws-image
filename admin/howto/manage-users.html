@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>User authentication and access &#8212; 2i2c Community Showcase Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/manage-users';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="User server management" href="control-user-server.html" />
+    <link rel="prev" title="Create a custom user image for your hub" href="environment/hub-user-image-template-guide.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="2i2c Community Showcase Handbook - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="2i2c Community Showcase Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Service Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the service</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../about/service/options.html">Usecases and prices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/index.html">Overview of hub features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/education.html">Education and teaching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/research.html">Research and collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../about/service/index.html">Our collaborative service model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/shared-responsibility.html">Shared responsibility model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/service-objectives.html">Service Level Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/comparison.html">Comparison to similar services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://infrastructure.2i2c.org/reference/hubs/">See a table of our running hubs!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/policy/index.html">User policies</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/acceptable-use.html">Acceptable Use Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/privacy.html">Privacy Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/sharing.html">Share data files with your users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/howto/specify-unlisted-image.html">Starting and customizing the software environment of a user server</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configurator.html">Configure the hub with the Configurator</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="environment/index.html">User environment and interface</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment/hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">User authentication and access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-user-server.html">User server management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/network.html">Network Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../community/events.html">Events and workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/content.html">Content creation and sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/strategy.html">Community strategy and organizing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-hub.html">Begin a new hub service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="replicate.html">Migrate off of a JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-billing-account.html">Billing and cloud accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/cloud-costs.html">Estimate cloud costs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/terminology.html">Terminology reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase/issues/new?title=Issue%20on%20page%20%2Fadmin/howto/manage-users.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/admin/howto/manage-users.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>User authentication and access</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-vs-authorization">Authentication vs. Authorization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cilogon">CILogon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-different-provider"><code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">different</span> <span class="pre">provider&gt;</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorization">Authorization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-users-from-the-administrator-panel">Manage users from the administrator panel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-add-users">To add users</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-users-from-a-hub">Remove users from a hub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-usernames">Finding usernames</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-user-authentication-issues">Debug user authentication issues</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="user-authentication-and-access">
+<h1>User authentication and access<a class="headerlink" href="#user-authentication-and-access" title="Permalink to this heading">#</a></h1>
+<section id="authentication-vs-authorization">
+<h2>Authentication vs. Authorization<a class="headerlink" href="#authentication-vs-authorization" title="Permalink to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong>Authentication</strong> allows your users to prove who their are.</p></li>
+<li><p><strong>Authorization</strong> gives users certain permissions depending on their identity (such as “access to your hub”, or “administrative privileges”).</p></li>
+</ul>
+<section id="authentication">
+<span id="admin-configuration-authentication"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">#</a></h3>
+<p>Users can prove who they are by logging in via an <em>authentication provider</em>. Currently, the following providers are supported:</p>
+<section id="cilogon">
+<h4><a class="reference external" href="https://www.cilogon.org/">CILogon</a><a class="headerlink" href="#cilogon" title="Permalink to this heading">#</a></h4>
+<p>An extremely popular provider for various institutional logins, Google accounts (including &#64;gmail.com accounts), Microsoft accounts, etc. This is our <strong>primary</strong> authentication provider.
+It can support allowing users from multiple institutions to login as well, which is very helpful.
+2i2c can manage CILogon using the JupyterHub CILogonOAuthenticator.</p>
+<p>Some key terms about CILogon authentication worth mentioning:</p>
+<p><code class="docutils literal notranslate"><span class="pre">Identity</span> <span class="pre">Provider</span></code>
+: The authentication service available through the CILogon connection.</p>
+<p>When a user logs in via CILogon, they are first presented with a list of various institutions and organizations that they may choose from (<code class="docutils literal notranslate"><span class="pre">Australia</span> <span class="pre">National</span> <span class="pre">University</span></code>, <code class="docutils literal notranslate"><span class="pre">UC</span> <span class="pre">Berkeley</span></code>, etc.).</p>
+<p>The available identity providers are members of <a class="reference external" href="https://www.incommon.org/federation/">InCommon</a>, a federation of universities and other organizations that provide single sign-on access to various resources.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Check if a community’s login provider is available on CILogon, by going to <a class="reference external" href="https://cilogon.org/idplist">https://cilogon.org/idplist</a> and filter after its name.</p>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">User</span> <span class="pre">account</span></code>
+: Within an institution, each user is expected to have their own user account (e.g. <code class="docutils literal notranslate"><span class="pre">myname&#64;berkeley.edu</span></code>). This is the account that is used to give somebody an ID on their JupyterHub. This is entered on an Identity Provider’s login screen.</p>
+</section>
+<section id="github">
+<h4><a class="reference external" href="https://github.com/">GitHub</a><a class="headerlink" href="#github" title="Permalink to this heading">#</a></h4>
+<p>Extremely popular community of people creating, publishing and collaborating on code. Accounts are free, and many people already have them especially since the target community for most hubs are people who also write some kind of code. We can setup GitHub authentication so you can either manage a list of specific GitHub handles in the <a class="reference internal" href="#admin-management-admin-panel"><span class="std std-ref">JupyterHub admin panel</span></a>, or so that members of a specific GitHub organisation or team are automatically authorised to use the hub.</p>
+</section>
+<section id="a-different-provider">
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">different</span> <span class="pre">provider&gt;</span></code><a class="headerlink" href="#a-different-provider" title="Permalink to this heading">#</a></h4>
+<p>We may be able to support other authentication providers, depending on your specific needs and the provider’s complexity. However, this should be used as a last resort and will come with an increase in management cost, to offset the extra engineering complexity. Please reach out to us if none of those above work for your use-case.</p>
+<p>We will ask you what provider you want when we set up the hub. We can change the provider after the fact, but only if absolutely necessary.</p>
+</section>
+</section>
+<section id="authorization">
+<h3>Authorization<a class="headerlink" href="#authorization" title="Permalink to this heading">#</a></h3>
+<p>Not everyone who can authenticate is granted access to the hub - that would mean
+everyone with a <code class="docutils literal notranslate"><span class="pre">&#64;gmail.com</span></code> account can log in if you use Google as your
+authentication provider! Instead, we support multiple ways for hub admins to
+specify which users are <em>authorized</em> to be on the hub.</p>
+<p>Authorizing regular users
+: Currently, there are only three supported methods for authorizing regular users:</p>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="#"><span class="doc std std-doc">Manually add users</span></a> via the admin panel in JupyterHub</p></li>
+<li><p>(Google only) Allow all users who are logged in via a particular domain - so
+you can allow access to anyone who is part of your organization or
+educational institution.</p></li>
+<li><p>(GitHub only) Allow all users who are members of a specific organisation or
+team. This approach gives you fine-grained control over who has access to the
+hub inline with your access policies on GitHub</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>If your hub has a range of different machine sizes or environments to choose from,
+we can also configure which users can see which options based on their GitHub team
+membership! For example, a team like <code class="docutils literal notranslate"><span class="pre">&#64;MyCoolOrg/all-users</span></code> might be able to see
+Small and Medium sized machines, but the <code class="docutils literal notranslate"><span class="pre">&#64;MyCoolOrg/advanced-users</span></code> team can additionally
+have access to the Large and GPU machines. You can manage these teams within GitHub.</p>
+<p>Speak to a Hub Engineer about enabling this feature for your hub.</p>
+</div>
+<p>Authorizing admin users
+: Admin users are authorized <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/c1d06be1eed2d748a4d39e4cba76436cffe89fb2/config/hubs/2i2c.cluster.yaml#L50-L55">in a hub’s YAML config</a>, with support from 2i2c staff.</p>
+</section>
+</section>
+<section id="manage-users-from-the-administrator-panel">
+<span id="admin-management-admin-panel"></span><h2>Manage users from the administrator panel<a class="headerlink" href="#manage-users-from-the-administrator-panel" title="Permalink to this heading">#</a></h2>
+<p>The <strong>Administrator Panel</strong> can be used to maintain the list of users
+who are authorized to use your hub. You can access this panel by clicking
+the ‘Admin’ button in the top bar in your hub control panel.
+Alternatively, you can go to this URL in your browser:
+<code class="docutils literal notranslate"><span class="pre">https://&lt;your-hub-url&gt;/hub/admin</span></code></p>
+<section id="to-add-users">
+<h3>To add users<a class="headerlink" href="#to-add-users" title="Permalink to this heading">#</a></h3>
+<ol class="arabic simple">
+<li><p>Click the <span class="guilabel">Add Users</span> button. The <span class="guilabel">Add Users</span> dialog box will pop up.</p></li>
+<li><p>Add one or more users, and hit the <span class="guilabel">Add Users</span> button to authorize all the users you just added.</p></li>
+</ol>
+<div class="sd-container-fluid sd-sphinx-override sd-mb-4 sd-pt-0 sd-pb-0 sd-pl-0 sd-pr-5 full-width docutils">
+<div class="sd-row docutils">
+<div class="sd-col sd-d-flex-row border-1 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default" id="id1">
+<img alt="../../_images/add-users-button.png" src="../../_images/add-users-button.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The <span class="guilabel">Add Users</span> button in the Administrator Panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="sd-col sd-d-flex-row border-1 docutils">
+<div class="sd-card sd-sphinx-override sd-w-100 sd-shadow-sm docutils">
+<div class="sd-card-body docutils">
+<figure class="align-default" id="id2">
+<img alt="../../_images/add-users-form.png" src="../../_images/add-users-form.png" />
+<figcaption>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Fill in usernames and optionally make them administrators. You can add multiple users at once by putting a username on each line.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="remove-users-from-a-hub">
+<h3>Remove users from a hub<a class="headerlink" href="#remove-users-from-a-hub" title="Permalink to this heading">#</a></h3>
+<p>You can revoke a user’s access to the JupyterHub by removing them from the allowed users list, using the admin panel.</p>
+<ol class="arabic simple">
+<li><p>Find the name of the user in your admin panel. If they have a running server,
+click the <span class="guilabel">Stop server</span> button to stop their running server.</p></li>
+<li><p>Click the <span class="guilabel">Delete user</span> button for this user. Confirm the deletion in
+the dialog box that pops up.</p></li>
+</ol>
+<p>After this, the user would not be able to log in. However, their files will not be deleted -
+if you add them later, their files will still be present.</p>
+</section>
+<section id="finding-usernames">
+<h3>Finding usernames<a class="headerlink" href="#finding-usernames" title="Permalink to this heading">#</a></h3>
+<p>Access is granted or revoked based on <code class="docutils literal notranslate"><span class="pre">usernames</span></code>, and these depend on the kind
+of <a class="reference internal" href="#admin-configuration-authentication"><span class="std std-ref">authentication provider</span></a> your hub is
+using. In general, it matches whatever the visible ‘username’ in your
+authentication provider is. The table below lists the available providers, and
+how to determine their username.</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Provider</p></th>
+<th class="head"><p>Username</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Google</p></td>
+<td><p>Email address</p></td>
+</tr>
+<tr class="row-odd"><td><p>GitHub</p></td>
+<td><p>GitHub user name</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="debug-user-authentication-issues">
+<h2>Debug user authentication issues<a class="headerlink" href="#debug-user-authentication-issues" title="Permalink to this heading">#</a></h2>
+<p>If users are running into strange errors when they log in (for example CILogon error pages that say “Looks like something went wrong!”), ask them to try these steps in debugging:</p>
+<ol class="arabic simple">
+<li><p>Try logging in with an <code class="docutils literal notranslate"><span class="pre">incognito</span></code> window. This will help determine if their issue is due to some cookie / cache that is stored on their machine.</p></li>
+<li><p>Ask them to clear their cookies / cache for all CILogon websites. For example, <a class="reference external" href="https://support.google.com/chrome/answer/95647?hl=en&amp;co=GENIE.Platform%3DDesktop">here are the Google Chrome instructions to clear cookies</a>.</p></li>
+<li><p>If using <code class="docutils literal notranslate"><span class="pre">CILogon</span></code>, double-check that they’ve signed in with the correct account, and <a class="reference external" href="https://infrastructure.2i2c.org/en/latest/howto/configure/auth-management.html#switch-identity-providers-or-user-accounts">ask them to switch accounts if needed</a>.</p></li>
+</ol>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./admin/howto"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="environment/hub-user-image-template-guide.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Create a custom user image for your hub</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="control-user-server.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">User server management</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication-vs-authorization">Authentication vs. Authorization</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authentication">Authentication</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#cilogon">CILogon</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#github">GitHub</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-different-provider"><code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">different</span> <span class="pre">provider&gt;</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#authorization">Authorization</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#manage-users-from-the-administrator-panel">Manage users from the administrator panel</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#to-add-users">To add users</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#remove-users-from-a-hub">Remove users from a hub</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#finding-usernames">Finding usernames</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#debug-user-authentication-issues">Debug user authentication issues</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 2i2c
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

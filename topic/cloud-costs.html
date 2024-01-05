@@ -1,0 +1,668 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Estimate cloud costs &#8212; 2i2c Community Showcase Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'topic/cloud-costs';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Terminology reference" href="../about/terminology.html" />
+    <link rel="prev" title="Billing and cloud accounts" href="../admin/howto/create-billing-account.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="2i2c Community Showcase Handbook - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="2i2c Community Showcase Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../index.html">
+                    Service Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the service</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about/service/options.html">Usecases and prices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/distributions/index.html">Overview of hub features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/distributions/education.html">Education and teaching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/distributions/research.html">Research and collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../about/service/index.html">Our collaborative service model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../about/service/shared-responsibility.html">Shared responsibility model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/service/service-objectives.html">Service Level Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../about/service/comparison.html">Comparison to similar services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://infrastructure.2i2c.org/reference/hubs/">See a table of our running hubs!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user/topics/policy/index.html">User policies</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/policy/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/policy/acceptable-use.html">Acceptable Use Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/policy/privacy.html">Privacy Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/sharing.html">Share data files with your users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/cloud.html">Cloud Object Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../user/howto/specify-unlisted-image.html">Starting and customizing the software environment of a user server</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/configurator.html">Configure the hub with the Configurator</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../admin/howto/environment/index.html">User environment and interface</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../admin/howto/environment/hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/manage-users.html">User authentication and access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/control-user-server.html">User server management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/topics/network.html">Network Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../community/events.html">Events and workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community/content.html">Content creation and sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../community/strategy.html">Community strategy and organizing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/new-hub.html">Begin a new hub service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/replicate.html">Migrate off of a JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/create-billing-account.html">Billing and cloud accounts</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Estimate cloud costs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../about/terminology.html">Terminology reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase/issues/new?title=Issue%20on%20page%20%2Ftopic/cloud-costs.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../_sources/topic/cloud-costs.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Estimate cloud costs</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-components-make-up-my-cloud-bill">What components make up my cloud bill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-actions-that-impact-cloud-costs">User actions that impact cloud costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-my-cloud-costs">Estimate my cloud costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-estimate-cloud-costs-for-communities">How we estimate cloud costs for communities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-kubernetes-clusters">Shared kubernetes clusters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-kubernetes-clusters">Dedicated kubernetes clusters</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="estimate-cloud-costs">
+<span id="costs-cloud"></span><h1>Estimate cloud costs<a class="headerlink" href="#estimate-cloud-costs" title="Permalink to this heading">#</a></h1>
+<p>We pass through cloud costs directly to our communities in a transparent manner.
+This encourages us to continually reduce the cloud costs for our communities, and helps them understand how their decisions affect their cloud bill.</p>
+<section id="what-components-make-up-my-cloud-bill">
+<h2>What components make up my cloud bill<a class="headerlink" href="#what-components-make-up-my-cloud-bill" title="Permalink to this heading">#</a></h2>
+<p>There are a few kinds of infrastructure that make up your cloud bill.
+Here is a short summary:</p>
+<ul class="simple">
+<li><p><strong>Nodes for user sessions</strong>: A “node” is kind-of like a virtual machine or a dedicated computer. It is reserved cloud infrastructure that you can use as you wish. Nodes have resources allocated to them (e.g., <code class="docutils literal notranslate"><span class="pre">100GB</span></code> of RAM). JupyterHub uses dedicated nodes for user sessions, so more users == more nodes. You generally pay cloud providers by the minute for each node used.</p></li>
+<li><p><strong>Storage costs</strong>: In order for users to persist their work over time, we must pay for filesystem storage. This is used to store user notebooks and content, data, etc. You generally pay cloud providers by the <code class="docutils literal notranslate"><span class="pre">GB</span></code> over time.</p></li>
+<li><p><strong>Nodes for hub infrastructure</strong>: In addition to the cloud nodes for user sessions, there are also nodes to run the JupyterHub and supporting infrastructure to manage user log-ins, do monitoring and reporting of activity, etc.</p></li>
+<li><p><strong>Nodes for specialized computing</strong>: For hubs that have scalable computing resources like a Dask Gateway, these generally request special nodes <em>on the fly</em>. When a scalable computation is executed, the cloud quickly requests many new nodes to complete the computation, and then removes them when it is done. You pay for the time used for each node during this computation.</p></li>
+</ul>
+<p>There are some other components that go into your cloud bill (e.g., “networking costs”) but these are the major pieces.</p>
+</section>
+<section id="user-actions-that-impact-cloud-costs">
+<h2>User actions that impact cloud costs<a class="headerlink" href="#user-actions-that-impact-cloud-costs" title="Permalink to this heading">#</a></h2>
+<p>Cloud costs depend on a few key factors that you and your community has control over.
+Here we list some major considerations (in decreasing order of importance):</p>
+<ul class="simple">
+<li><p><strong>Base user resources needed</strong>: The power and complexity of the user environment is the biggest driver of “base cost per user”. This is largely driven by the amount of memory (RAM) each user needs. See below for a more in-depth explanation.</p></li>
+<li><p><strong>Community usage over time</strong>: Resources are requested from the cloud “on-demand”, meaning that your cloud costs will scale up and down with number of active users at any given moment.</p></li>
+<li><p><strong>User storage over time</strong>: User storage is different from on-demand resources, because it’s “always being used” even when you’re not logged-in. We recommend storing large datasets and such in cloud object storage, which is much cheaper.</p></li>
+<li><p><strong>Dedicated vs. shared infrastructure</strong>: If your community requires their own dedicated cloud infrastructure (for example, a dedicated Kubernetes cluster) then this will boost your cloud costs because you will not be sharing this cost with other communities.</p></li>
+<li><p><strong>Cloud optimizations</strong>: There are many ways to make cloud infrastructure more efficient and scalable, and the 2i2c engineering team is constantly experimenting with ways to lower costs for communities. For many non-2i2c hubs, inefficiency is a large source of cloud cost, though the 2i2c hubs are already well-optimized.</p></li>
+</ul>
+</section>
+<section id="estimate-my-cloud-costs">
+<h2>Estimate my cloud costs<a class="headerlink" href="#estimate-my-cloud-costs" title="Permalink to this heading">#</a></h2>
+<p>The following is a very rough guideline to follow in order to understand and estimate what your cloud costs might be.
+These are similar whether you’re using 2i2c to manage your hub, or running it yourself.</p>
+<p>Generally speaking, <strong>the biggest technical driver of cloud costs is user memory (RAM)</strong>.
+This is because RAM must be “reserved” on a node, and each node has a finite amount of memory available to it.</p>
+<p>Let’s say a user node costs <code class="docutils literal notranslate"><span class="pre">$100.00</span></code> an hour, and comes with <code class="docutils literal notranslate"><span class="pre">100GB</span></code> total RAM.
+If each user is guaranteed <code class="docutils literal notranslate"><span class="pre">1GB</span></code> of RAM, then the node can theoretically fit <code class="docutils literal notranslate"><span class="pre">100</span></code> users at a time.
+<code class="docutils literal notranslate"><span class="pre">100</span></code> simultaneous users will cost <code class="docutils literal notranslate"><span class="pre">$100.00</span></code> an hour, or roughly <code class="docutils literal notranslate"><span class="pre">$1</span> <span class="pre">/</span> <span class="pre">user</span> <span class="pre">/</span> <span class="pre">hour</span></code>.</p>
+<p>If we double the guaranteed RAM available to users, then the node can now fit <code class="docutils literal notranslate"><span class="pre">50</span></code> users at once (<code class="docutils literal notranslate"><span class="pre">100</span> <span class="pre">GB</span> <span class="pre">/</span> <span class="pre">2</span> <span class="pre">GB</span> <span class="pre">per</span> <span class="pre">user</span> <span class="pre">=</span> <span class="pre">50</span> <span class="pre">users</span> <span class="pre">total</span></code>).
+We now need twice the number of nodes to handle the same number of users.
+<code class="docutils literal notranslate"><span class="pre">100</span></code> simultaneous users will now cost <code class="docutils literal notranslate"><span class="pre">$200.00</span></code> an hour, or roughly <code class="docutils literal notranslate"><span class="pre">$2</span> <span class="pre">/</span> <span class="pre">user</span> <span class="pre">/</span> <span class="pre">hour</span></code>.</p>
+<p>In practice, the cost per node depends heavily on the cloud provider, and is constantly in-flux.
+<strong>To estimate your own cloud costs</strong>, follow these steps:</p>
+<ol class="arabic simple">
+<li><p><strong>Estimate memory available to each user</strong>. The amount of RAM needed for each user is often the biggest driver of cloud cost. Decide the “maximum” amount of RAM that a user % will generally need, and multiply that by 1.5x.</p></li>
+<li><p><strong>Determine how many average simultaneous users you’d like a hub to support</strong>. This isn’t necessarily the total size of your community, but how many people you think will be % using the hub <em>at the same time</em>.</p></li>
+<li><p><strong>Look up the monthly price for an <code class="docutils literal notranslate"><span class="pre">n1-highmem-4</span></code> node</strong>. This is a basic node type that serves most use-cases and can be used as a benchmark for comparison.</p>
+<ol class="arabic simple">
+<li><p><a class="reference external" href="https://cloud.google.com/compute/vm-instance-pricing">Go to the Google Cloud pricing page</a>. This lists prices for many kinds of nodes with Google Cloud Platform.</p></li>
+<li><p>Go to the <code class="docutils literal notranslate"><span class="pre">N1</span> <span class="pre">high-memory</span> <span class="pre">machine</span> <span class="pre">types</span></code> section. This contains prices for all <code class="docutils literal notranslate"><span class="pre">N1</span></code> node types with high memory.</p></li>
+<li><p>Look at the hourly price for <code class="docutils literal notranslate"><span class="pre">n1-highmem-4</span></code>.</p></li>
+<li><p>Divide this amount by <code class="docutils literal notranslate"><span class="pre">n_simultaneous_users_per_hour</span> <span class="pre">*</span> <span class="pre">GB_per_user</span></code>.</p></li>
+<li><p>This is your estimated extra cost per hour per user.</p></li>
+</ol>
+</li>
+<li><p><strong>Estimate storage costs</strong>. Estimate your storage costs based on the expected storage each user will take up. 2i2c’s hubs use a standard NFS File Storage for most hubs, which has very fast latency for interactive computing. <a class="reference external" href="https://cloud.google.com/storage/pricing#price-tables">Here are Google’s file storage prices</a>, for example. You can estimate these costs based on the expected storage used across all of your users.</p></li>
+</ol>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p>We recommend checking out the following resources to learn more about cloud costs.
+None of these are guarantees about costs, but should give you a general idea.</p>
+<ul class="simple">
+<li><p>For general information and explanation, see <span class="xref myst">the Zero to JupyterHub cost projection documentation</span>.</p></li>
+<li><p>For educational or “lightweight resources” hubs, see <a class="reference external" href="https://nbviewer.jupyter.org/github/berkeley-dsep-infra/datahub-usage-analysis/blob/master/notebooks/03-visualize-cost-and-usage.ipynb">this rough cost analysis notebook from the UC Berkeley DataHub</a>.</p></li>
+<li><p>For data- and compute-intensive hubs, see the Pangeo two-part series on their Kubernetes costs. (<a class="reference external" href="https://medium.com/pangeo/pangeo-cloud-costs-part1-f89842da411d">part 1 link</a>, <a class="reference external" href="https://medium.com/pangeo/pangeo-cloud-cluster-design-9d58a1bf1ad3">part 2 link</a>)</p></li>
+</ul>
+</div>
+</section>
+<section id="how-we-estimate-cloud-costs-for-communities">
+<h2>How we estimate cloud costs for communities<a class="headerlink" href="#how-we-estimate-cloud-costs-for-communities" title="Permalink to this heading">#</a></h2>
+<p>The previous sections give a high-level overview of how to think about cloud costs and how they’ll reflect your community’s usage.
+This section describes how the 2i2c team calculates cloud costs and passes this on to communities.</p>
+<p>Over time, we will refine this process to make it more precise and (as much as possible) directly tied to the usage a community incurs.</p>
+<section id="shared-kubernetes-clusters">
+<h3>Shared kubernetes clusters<a class="headerlink" href="#shared-kubernetes-clusters" title="Permalink to this heading">#</a></h3>
+<p>For hubs that run on <strong>shared Kubernetes clusters</strong>, we estimate their cloud costs via the following process:</p>
+<ol class="arabic simple">
+<li><p>Calculate the monthly cloud bill for this cluster.</p></li>
+<li><p>Calculate the % usage for a specific community, based on the % of RAM requested throughout the month.</p></li>
+<li><p>Estimate a community’s cloud costs for that month by calculating <code class="docutils literal notranslate"><span class="pre">(monthly_cloud_bill_for_cluster</span> <span class="pre">*</span> <span class="pre">%_usage_for_this_community)</span></code>.</p></li>
+</ol>
+</section>
+<section id="dedicated-kubernetes-clusters">
+<h3>Dedicated kubernetes clusters<a class="headerlink" href="#dedicated-kubernetes-clusters" title="Permalink to this heading">#</a></h3>
+<p>For hubs that run on a <strong>dedicated Kubernetes cluster</strong>, a cloud bill will be generated by the cloud provider, 2i2c will pay it in advance, and we will include this cost in the next month’s invoice.
+This will exactly reflect the cloud charges incurred by the hub in that time.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./topic"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../admin/howto/create-billing-account.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Billing and cloud accounts</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../about/terminology.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Terminology reference</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-components-make-up-my-cloud-bill">What components make up my cloud bill</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#user-actions-that-impact-cloud-costs">User actions that impact cloud costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#estimate-my-cloud-costs">Estimate my cloud costs</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-we-estimate-cloud-costs-for-communities">How we estimate cloud costs for communities</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#shared-kubernetes-clusters">Shared kubernetes clusters</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#dedicated-kubernetes-clusters">Dedicated kubernetes clusters</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 2i2c
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

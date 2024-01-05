@@ -1,0 +1,795 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>User environment and interface &#8212; 2i2c Community Showcase Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/environment/index';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Create a custom user image for your hub" href="hub-user-image-template-guide.html" />
+    <link rel="prev" title="Configure the hub with the Configurator" href="../configurator.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="2i2c Community Showcase Handbook - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2i2c Community Showcase Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Service Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the service</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../about/service/options.html">Usecases and prices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/index.html">Overview of hub features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/education.html">Education and teaching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/research.html">Research and collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../about/service/index.html">Our collaborative service model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/shared-responsibility.html">Shared responsibility model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/service-objectives.html">Service Level Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/comparison.html">Comparison to similar services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://infrastructure.2i2c.org/reference/hubs/">See a table of our running hubs!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../user/topics/policy/index.html">User policies</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/policy/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/policy/acceptable-use.html">Acceptable Use Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/policy/privacy.html">Privacy Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/data/sharing.html">Share data files with your users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../user/howto/specify-unlisted-image.html">Starting and customizing the software environment of a user server</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../configurator.html">Configure the hub with the Configurator</a></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">User environment and interface</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../manage-users.html">User authentication and access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../control-user-server.html">User server management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topics/network.html">Network Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../community/events.html">Events and workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/content.html">Content creation and sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/strategy.html">Community strategy and organizing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../new-hub.html">Begin a new hub service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../replicate.html">Migrate off of a JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../create-billing-account.html">Billing and cloud accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/cloud-costs.html">Estimate cloud costs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about/terminology.html">Terminology reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase/issues/new?title=Issue%20on%20page%20%2Fadmin/howto/environment/index.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/admin/howto/environment/index.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>User environment and interface</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-your-user-environment">Customize your user environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-docker-image">Create your own docker image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-overview">A quick overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-in-depth-guide">An in-depth guide</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporarily-install-packages-for-a-session">Temporarily install packages for a session</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-multiple-environments-for-users-to-select">Create multiple environments for users to select</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-user-environment">The default user environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-user-interfaces">Default user interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-classic">Jupyter Notebook (Classic)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rstudio">RStudio</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-changes-to-the-default-environmen">Ask for changes to the default environmen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-user-interfaces">Accessing user interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-changing-your-url">by changing your URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-changing-the-hub-defaults">by changing the hub defaults</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-using-nbgitpuller-links">by using <code class="docutils literal notranslate"><span class="pre">nbgitpuller</span></code> links</a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="user-environment-and-interface">
+<h1>User environment and interface<a class="headerlink" href="#user-environment-and-interface" title="Permalink to this heading">#</a></h1>
+<p>When your users log in to their hub, they are presented with a
+configured environment with base libraries, user interfaces and
+languages installed. This allows them to start working immediately,
+without having to install packages themselves.</p>
+<section id="customize-your-user-environment">
+<span id="environment-custom"></span><h2>Customize your user environment<a class="headerlink" href="#customize-your-user-environment" title="Permalink to this heading">#</a></h2>
+<p>While all hubs <a class="reference internal" href="#environment-default"><span class="std std-ref">come with a default environment</span></a>, it is possible to create a custom user environment for the hub.
+Here are a few ways that you can do this.</p>
+<section id="create-your-own-docker-image">
+<span id="environment-image"></span><h3>Create your own docker image<a class="headerlink" href="#create-your-own-docker-image" title="Permalink to this heading">#</a></h3>
+<p>Our hubs use <a class="reference external" href="https://www.docker.com/">docker images</a> to provide the
+user environment.
+You can build and bring your own docker image, which gives you <em>full control</em> over your user environment.</p>
+<p>In order to do this, we need to define an environment in a repository, generate a Docker image from that environment, push the Docker image to an image registry, and tell your JupyterHub to pull from that registry.
+See the sections below for more detail.</p>
+<section id="a-quick-overview">
+<h4>A quick overview<a class="headerlink" href="#a-quick-overview" title="Permalink to this heading">#</a></h4>
+<p>We recommend using the <a class="reference external" href="https://repo2docker.readthedocs.io/">repo2docker tool</a> to define and build your user environment.
+This is the tool used by <a class="reference external" href="https://mybinder.org">the Binder project</a>, and is a good standard to follow for defining clear and reproducible computational environments.</p>
+<p>To use repo2docker to build user environments for your hub, you’ll need to:</p>
+<ol class="arabic">
+<li><p><strong>Create a repository</strong> that hosts the files that will define your environment.</p></li>
+<li><p><strong>Add files in the repository</strong> that define your user environment.
+Here are a few good resources for defining these files:</p>
+<ul class="simple">
+<li><p>The Binder Project has <a class="reference external" href="https://mybinder.readthedocs.io/en/latest/using/config_files.html">documentation about what files are supported</a>.</p></li>
+<li><p>The Turing Way has an excellent a collection of tutorials for getting started with Binder, and covers <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/main/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-python.md">Python</a>, <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/main/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-julia.md">Julia</a>, and <a class="reference external" href="https://github.com/alan-turing-institute/the-turing-way/blob/main/workshops/boost-research-reproducibility-binder/workshop-presentations/zero-to-binder-r.md">the R language</a>.</p></li>
+</ul>
+</li>
+<li><p><strong>Create a Docker image registry account</strong>. This will be the place where you store user images once they are built, so that the hub can access them.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>We recommend using <a class="reference external" href="https://quay.io/">the quay.io image registry</a> for your Docker images.
+This is a public registry service run by <a class="reference external" href="https://www.redhat.com/en">Red Hat</a>, and is reliable to use.</p>
+</div>
+</li>
+<li><p><strong>Set up a GitHub Action</strong> to automatically build a Docker image using <a class="reference external" href="https://github.com/jupyterhub/repo2docker-action">the repo2docker action</a>, and push it to a registry.</p></li>
+<li><p><strong>Configure your hub</strong> to pull the user image from the registry above, either via <a class="reference internal" href="../configurator.html"><span class="doc std std-doc">the configurator</span></a> (to do it yourself) or by <span class="xref myst">opening a support ticket</span> (to request that a 2i2c engineer do this for you).</p></li>
+</ol>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>By following these steps, you have also created a <a class="reference external" href="https://mybinder.org">Binder-ready repository</a>, and we recommend trying to build your reposity on <a class="reference external" href="http://mybinder.org">mybinder.org</a> in order to test things out.</p>
+</div>
+</section>
+<section id="an-in-depth-guide">
+<h4>An in-depth guide<a class="headerlink" href="#an-in-depth-guide" title="Permalink to this heading">#</a></h4>
+<p>To help you get started, we’ve created an <a class="reference internal" href="hub-user-image-template-guide.html#hub-user-image-template-guide-how-to"><span class="std std-ref">environment generation guide</span></a> and a small <a class="reference external" href="https://github.com/2i2c-org/hub-user-image-template">template repository</a> that will guide you through the process.
+You can go to the repository by clicking the button below.</p>
+<p><a class="sd-sphinx-override sd-btn sd-text-wrap sd-btn-primary reference external" href="https://github.com/2i2c-org/hub-user-image-template/blob/main/README.md"><span>Go to user environment template</span></a></p>
+<p>And find the sections of the guide below:</p>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="hub-user-image-template-guide.html">Create a custom user image for your hub</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#use-the-template-repository">1. Use the template repository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#connect-the-new-repository-to-quay-io">2. Connect the new repository to quay.io</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#enable-image-pushes-to-quay-io">3. Enable image pushes to quay.io</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="hub-user-image-template-guide.html#enable-quay-io-image-push-for-build-yaml">Enable quay.io image push for build.yaml</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hub-user-image-template-guide.html#enable-quay-io-image-push-during-pull-requests">Enable quay.io image <strong>push</strong> during Pull Requests</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#customize-the-image">4. Customize the image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#build-and-push-the-image">5. Build and push the image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#connect-the-hub-with-this-user-image">6. Connect the hub with this user image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#test-the-new-image">7. Test the new image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hub-user-image-template-guide.html#appendix-push-the-image-to-a-registry-other-than-quay-io-cloud">Appendix: Push the image to a registry other than Quay.io :cloud:</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="temporarily-install-packages-for-a-session">
+<h3>Temporarily install packages for a session<a class="headerlink" href="#temporarily-install-packages-for-a-session" title="Permalink to this heading">#</a></h3>
+<p>You can temporarily install packages in your environment that will
+just last the duration of your user session. They will get wiped out
+when your user server is stopped, to ensure that you always start from
+the ‘default’ environment.</p>
+<p>The recommended way is to put <code class="docutils literal notranslate"><span class="pre">%pip</span> <span class="pre">install</span> <span class="pre">&lt;list-of-packages&gt;</span></code> or
+<code class="docutils literal notranslate"><span class="pre">%conda</span> <span class="pre">install</span> <span class="pre">&lt;list-of-packages&gt;</span></code> in the first cell of any notebook
+you distribute, so when run it’ll install necessary packages. For R,
+you can use <code class="docutils literal notranslate"><span class="pre">install.packages(&quot;package-name&quot;)</span></code> as you normally would.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>While tempting, do not use <code class="docutils literal notranslate"><span class="pre">!pip</span> <span class="pre">install</span> <span class="pre">--user</span> <span class="pre">&lt;packages&gt;</span></code> to install
+packages. This makes the base environment different for different users,
+causing hard-to debug-issues. This could also render your user server
+unable to start, due to conflicting packages. <a class="reference external" href="http://jakevdp.github.io/blog/2017/12/05/installing-python-packages-from-jupyter/">See this blog post on using pip in Jupyter</a> for some helpful explanation.</p>
+</div>
+</section>
+</section>
+<section id="create-multiple-environments-for-users-to-select">
+<h2>Create multiple environments for users to select<a class="headerlink" href="#create-multiple-environments-for-users-to-select" title="Permalink to this heading">#</a></h2>
+<p>If your hub’s community has workflows that differ significantly, it can be useful to create multiple user environments for your hub.
+This uses <span class="xref myst">Jupyter Hub User Profiles</span> to create a menu of environment options when a user launches a new session.</p>
+<p>To add multiple environments for your hub, take these steps:</p>
+<ol class="arabic simple">
+<li><p>Follow the steps in <a class="reference internal" href="#environment-image"><span class="std std-ref">Create your own docker image</span></a> for each environment you wish to offer your hub’s users.
+You should have one repository per environment, and each one should push to a Docker image registry via the repo2docker action.</p></li>
+<li><p><span class="xref myst">Open a support request</span> requesting that your hub be set up to serve multiple user environments.
+A 2i2c engineer will assist you in configuring the hub to set up multiple environments.</p></li>
+</ol>
+</section>
+<section id="the-default-user-environment">
+<span id="environment-default"></span><h2>The default user environment<a class="headerlink" href="#the-default-user-environment" title="Permalink to this heading">#</a></h2>
+<p>The default environment for all community hubs is defined <a class="reference external" href="https://github.com/2i2c-org/2i2c-hubs-image">in this
+repository</a>.</p>
+<p>It is configured with the following:</p>
+<ul class="simple">
+<li><p><strong>Python packages</strong>: defined in <a class="reference external" href="https://github.com/2i2c-org/2i2c-hubs-image/blob/main/requirements.txt">this <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code>
+file</a>. Many common scientific python packages are installed here.</p></li>
+<li><p><strong>R packages</strong>: installed from <a class="reference external" href="https://github.com/2i2c-org/2i2c-hubs-image/blob/main/install.R">this <code class="docutils literal notranslate"><span class="pre">install.R</span></code>
+file</a>.</p></li>
+<li><p><strong>Data science interfaces</strong>: many popular data science user interfaces are installed:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/jupyter/notebook/">Classic Jupyter Notebook</a></p></li>
+<li><p><a class="reference external" href="https://github.com/jupyterlab/jupyterlab/">JupyterLab</a></p></li>
+<li><p><a class="reference external" href="https://rstudio.com/">RStudio</a></p></li>
+</ul>
+</li>
+<li><p>An Ubuntu 20.04 base image, with common utility packages installed.</p></li>
+</ul>
+<section id="default-user-interfaces">
+<span id="environment-default-interface"></span><h3>Default user interfaces<a class="headerlink" href="#default-user-interfaces" title="Permalink to this heading">#</a></h3>
+<p>The 2i2c hubs offer the following user interfaces by default:</p>
+<section id="jupyter-notebook-classic">
+<h4>Jupyter Notebook (Classic)<a class="headerlink" href="#jupyter-notebook-classic" title="Permalink to this heading">#</a></h4>
+<p>The <a class="reference external" href="https://jupyter-notebook.readthedocs.io/en/latest/">original single-document interface</a> for creating Jupyter Notebooks.</p>
+</section>
+<section id="jupyterlab">
+<h4>JupyterLab<a class="headerlink" href="#jupyterlab" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<img alt="JupyterLab layout" src="../../../_images/jupyterlab.png" />
+</figure>
+<p><a class="reference external" href="https://github.com/jupyterlab/jupyterlab">JupyterLab</a> is a more modern version of the classic Jupyter notebook from
+the Jupyter project. It is more customizable and better supports advanced use cases - particularly around <a class="reference external" href="https://dask.org">dask</a>. Many
+research organizations use this.</p>
+</section>
+<section id="rstudio">
+<h4>RStudio<a class="headerlink" href="#rstudio" title="Permalink to this heading">#</a></h4>
+<figure class="align-default">
+<img alt="RStudio" src="../../../_images/rstudio.png" />
+</figure>
+<p><a class="reference external" href="https://rstudio.com">RStudio</a> is an IDE for R, created by the RStudio company.</p>
+</section>
+</section>
+<section id="ask-for-changes-to-the-default-environmen">
+<h3>Ask for changes to the default environmen<a class="headerlink" href="#ask-for-changes-to-the-default-environmen" title="Permalink to this heading">#</a></h3>
+<p>If you are using the default environment, and think that one or two packages should be installed by default on it, please <span class="xref myst">send a support request</span> and request an update to the default environment.</p>
+</section>
+</section>
+<section id="accessing-user-interfaces">
+<h2>Accessing user interfaces<a class="headerlink" href="#accessing-user-interfaces" title="Permalink to this heading">#</a></h2>
+<p>There are three main interfaces available on the 2i2c JupyterHubs.
+There are a few different ways that you may encourage users to switch between them.</p>
+<section id="by-changing-your-url">
+<h3>by changing your URL<a class="headerlink" href="#by-changing-your-url" title="Permalink to this heading">#</a></h3>
+<p>You may switch between user interfaces interactively by altering the URL of your session.
+For example, here is the general structure of a URL for your personal 2i2c JupyterHub session:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">hub</span><span class="o">&gt;.</span><span class="n">pilot</span><span class="mf">.2</span><span class="n">i2c</span><span class="o">.</span><span class="n">cloud</span><span class="o">/</span><span class="n">user</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">interface</span><span class="o">&gt;</span>
+</pre></div>
+</div>
+<p>You can replace the contents of <code class="docutils literal notranslate"><span class="pre">&lt;your-interface&gt;</span></code> to be one of the following:</p>
+<ul class="simple">
+<li><p><strong>JupyterLab</strong>: <code class="docutils literal notranslate"><span class="pre">/lab</span></code></p></li>
+<li><p><strong>Jupyter Notebook</strong>: <code class="docutils literal notranslate"><span class="pre">/tree</span></code></p></li>
+<li><p><strong>RStudio</strong>: <code class="docutils literal notranslate"><span class="pre">/rstudio</span></code></p></li>
+</ul>
+</section>
+<section id="by-changing-the-hub-defaults">
+<h3>by changing the hub defaults<a class="headerlink" href="#by-changing-the-hub-defaults" title="Permalink to this heading">#</a></h3>
+<p>A Hub Administrator can also configure the <strong>default</strong> interface that users see.
+To do so, see <a class="reference internal" href="../configurator.html#configurator-interface"><span class="std std-ref">the configurator interface guide</span></a>.</p>
+</section>
+<section id="by-using-nbgitpuller-links">
+<h3>by using <code class="docutils literal notranslate"><span class="pre">nbgitpuller</span></code> links<a class="headerlink" href="#by-using-nbgitpuller-links" title="Permalink to this heading">#</a></h3>
+<p>In addition, you can configure the interface that <strong>nbgitpuller links</strong> point to, see <a class="reference internal" href="../../../community/content.html#content-nbgitpuller"><span class="std std-ref">Distribute content with nbgitpuller</span></a> for information about nbgitpuller links.</p>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./admin/howto/environment"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../configurator.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Configure the hub with the Configurator</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="hub-user-image-template-guide.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Create a custom user image for your hub</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#customize-your-user-environment">Customize your user environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#create-your-own-docker-image">Create your own docker image</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#a-quick-overview">A quick overview</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#an-in-depth-guide">An in-depth guide</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#temporarily-install-packages-for-a-session">Temporarily install packages for a session</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#create-multiple-environments-for-users-to-select">Create multiple environments for users to select</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-default-user-environment">The default user environment</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#default-user-interfaces">Default user interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyter-notebook-classic">Jupyter Notebook (Classic)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#jupyterlab">JupyterLab</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#rstudio">RStudio</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ask-for-changes-to-the-default-environmen">Ask for changes to the default environmen</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#accessing-user-interfaces">Accessing user interfaces</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-changing-your-url">by changing your URL</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-changing-the-hub-defaults">by changing the hub defaults</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#by-using-nbgitpuller-links">by using <code class="docutils literal notranslate"><span class="pre">nbgitpuller</span></code> links</a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 2i2c
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

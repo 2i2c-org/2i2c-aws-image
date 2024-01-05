@@ -1,0 +1,710 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Migrate off of a JupyterHub &#8212; 2i2c Community Showcase Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/replicate';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Billing and cloud accounts" href="create-billing-account.html" />
+    <link rel="prev" title="Begin a new hub service" href="new-hub.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/logo.png" class="logo__image only-light" alt="2i2c Community Showcase Handbook - Home"/>
+    <script>document.write(`<img src="../../_static/logo.png" class="logo__image only-dark" alt="2i2c Community Showcase Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../index.html">
+                    Service Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the service</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../about/service/options.html">Usecases and prices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/index.html">Overview of hub features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/education.html">Education and teaching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/distributions/research.html">Research and collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../about/service/index.html">Our collaborative service model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/shared-responsibility.html">Shared responsibility model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/service-objectives.html">Service Level Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../about/service/comparison.html">Comparison to similar services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://infrastructure.2i2c.org/reference/hubs/">See a table of our running hubs!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/policy/index.html">User policies</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/acceptable-use.html">Acceptable Use Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/policy/privacy.html">Privacy Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/sharing.html">Share data files with your users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../user/howto/specify-unlisted-image.html">Starting and customizing the software environment of a user server</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="configurator.html">Configure the hub with the Configurator</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="environment/index.html">User environment and interface</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="environment/hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="manage-users.html">User authentication and access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="control-user-server.html">User server management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../topics/network.html">Network Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../community/events.html">Events and workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/content.html">Content creation and sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../community/strategy.html">Community strategy and organizing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="new-hub.html">Begin a new hub service</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Migrate off of a JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="create-billing-account.html">Billing and cloud accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../topic/cloud-costs.html">Estimate cloud costs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../about/terminology.html">Terminology reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase/issues/new?title=Issue%20on%20page%20%2Fadmin/howto/replicate.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/admin/howto/replicate.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Migrate off of a JupyterHub</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-your-home-directory">Download your home directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replicate-your-own-2i2c-jupyterhub">Replicate your own 2i2c JupyterHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-the-basic-infrastructure">Understand the basic infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-that-you-ll-need-to-accomplish-this">Skills that you’ll need to accomplish this</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-work-is-involved-in-operating-a-2i2c-jupyterhub">What work is involved in operating a 2i2c JupyterHub?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#find-your-2i2c-jupyterhub-configuration">Find your 2i2c JupyterHub configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-own-jupyterhub-on-kubernetes">Set up your own JupyterHub on Kubernetes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration">Enhance your JupyterHub to use your 2i2c JupyterHub configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="migrate-off-of-a-jupyterhub">
+<h1>Migrate off of a JupyterHub<a class="headerlink" href="#migrate-off-of-a-jupyterhub" title="Permalink to this heading">#</a></h1>
+<p>A core tenet of 2i2c is the <a class="reference external" href="https://2i2c.org/right-to-replicate">Right to Replicate</a>.
+This means that we want it to be as easy as possible for our users to deploy their own infrastructure that replicates a 2i2c JupyterHub, without requiring 2i2c to be involved.</p>
+<p>This page is a short guide on how you can migrate off of a 2i2c JupyterHub, either to work locally or to deploy your own JupyterHub.</p>
+<section id="download-your-home-directory">
+<h2>Download your home directory<a class="headerlink" href="#download-your-home-directory" title="Permalink to this heading">#</a></h2>
+<p>You might want to download your entire home directory for many
+reasons - to get data off a hub that is closing, to migrate to
+a different service, for archival purposes, etc. Your home directory
+will contain all your data <em>and</em> your notebooks.
+Hubs managed by 2i2c make this easy.</p>
+<ol class="arabic">
+<li><p><strong>Open the classic Jupyter Notebook file browser.</strong> If you are
+using another interface, navigate to the classic interface by changing your
+URL path to <code class="docutils literal notranslate"><span class="pre">/tree</span></code>. e.g.,
+<code class="docutils literal notranslate"><span class="pre">&lt;your-hub&gt;.pilot.2i2c.cloud/user/&lt;your-username&gt;/tree</span></code></p></li>
+<li><p>Click on <strong><code class="docutils literal notranslate"><span class="pre">Download</span> <span class="pre">Directory</span></code></strong>.</p>
+<figure class="align-default">
+<img alt="The download directory button" src="../../_images/download-directory.png" />
+</figure>
+</li>
+</ol>
+<p>This will zip up the contents of your user file system and download them to your machine.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If your hub is using a <a class="reference internal" href="environment/index.html#environment-custom"><span class="std std-ref">custom user environment</span></a>, it needs the
+<a class="reference external" href="https://github.com/ryanlovett/jupyter-tree-download">jupyter-tree-download</a> package
+installed to make this feature available. As it is a Jupyter Notebook extension, you
+<em>must</em> install this in your image - manually installing with <code class="docutils literal notranslate"><span class="pre">!pip</span></code> inside your notebook
+will <em>not</em> work.</p>
+</div>
+</section>
+<section id="replicate-your-own-2i2c-jupyterhub">
+<h2>Replicate your own 2i2c JupyterHub<a class="headerlink" href="#replicate-your-own-2i2c-jupyterhub" title="Permalink to this heading">#</a></h2>
+<p>2i2c JupyterHubs are built entirely with open source tools that are community-led.
+We prioritize tools with diverse, multi-stakeholder communities, which maximizes the chances that the tools will continue to be broadly useful for a long time to come.</p>
+<p>This section describes how you could replicate your own JupyterHub that closely follows the setup used by 2i2c.</p>
+<section id="understand-the-basic-infrastructure">
+<h3>Understand the basic infrastructure<a class="headerlink" href="#understand-the-basic-infrastructure" title="Permalink to this heading">#</a></h3>
+<p>2i2c JupyterHubs use the official <a class="reference external" href="https://github.com/jupyterhub/helm-chart">JupyterHub Helm Chart</a> for their configuration and deployment.
+They run on an open-source platform called <a class="reference external" href="https://kubernetes.io/">Kubernetes</a>, which allows you to deploy infrastructure on a variety of cloud providers.
+We use a tool called <a class="reference external" href="https://helm.sh/">Helm</a> to manage your Kubernetes cluster in order to provide the JupyterHub service that makes up a 2i2c JupyterHub.</p>
+<p>All of these tools are covered in the excellent <a class="reference external" href="https://z2jh.jupyter.org">Zero to JupyterHub for Kubernetes guide</a>, which 2i2c JupyterHubs follow quite closely.</p>
+</section>
+<section id="skills-that-you-ll-need-to-accomplish-this">
+<h3>Skills that you’ll need to accomplish this<a class="headerlink" href="#skills-that-you-ll-need-to-accomplish-this" title="Permalink to this heading">#</a></h3>
+<p>There are many skills needed in operating cloud services.
+We’ll cover a few key pieces below (note that they may be provided by either a single person, or multiple people).
+We’ll refer to the group of people that run your cloud infrastructure the <strong>Site Reliability Team</strong>.</p>
+<p>Dev/Ops Familiarity
+: The most important is a familiarity with <strong>dev-ops</strong> workflows (also often called <strong>Site Reliability Engineering</strong>).
+This is a set of practices and a mentality that is designed for running agile, cloud-based applications with minimal unnecessary overhead.
+You should have somebody that is generally familiar with cloud infrastructure, and able dig through documentation and understand how it relates to a variety of provider-specific APIs.
+This may be a local system administrator (sys-admin), though note that the practice of systems administration is often very different from running dev-ops workflows and cloud services, both technically-speaking and in terms of process and mentality.</p>
+<p>Development in Python (and maybe JavaScript)
+: Many of the infrastructure pieces in the Jupyter stack use Python as their implementation language.
+This includes tools like JupyterHub, Jupyter Lab / Notebooks, etc.
+Modifications to your configuration and deployments often require coding in Python, so you should be comfortable programming in this language.
+In addition, some changes to your hub might require JavaScript expertise as well - especially if you wish to change or customize any user interface elements.</p>
+<p>Software Development in the language your users use
+: In addition to generic cloud infrastructure experience, it is also important to have somebody with development skills that are familiar to your users.
+Running a service requires understanding the perspective of your users, and helping guide them in utilizing the infrastructure to its maximum potential.
+You should have somebody that understands the kinds of problems your users are solving, and can help them debug and improve their work.</p>
+<p>Communications skills and processes to facilitate this
+: Finally, it is crucial that everybody on a cloud service have excellent and open communication skills.
+Running cloud services requires a lot of coordination both in development and operations, and minimizing the work this takes requires having effective processes in operating as a distributed team.</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>A great place to pick up these skills is to engage with other communities that deploy applications in the cloud.
+Look up <strong>Site Reliability Engineer</strong> and <strong>Dev/Ops</strong> communities, and engage with them.
+You can also find others deploying Jupyter infrastructure via <a class="reference external" href="https://discourse.jupyter.org/">the Jupyter Community Forum</a>.
+Finally, there are an increasing number of communities in higher education that can provide expertise and advice - search your local community to find others that are trying to solve the same problems.</p>
+</div>
+</section>
+<section id="what-work-is-involved-in-operating-a-2i2c-jupyterhub">
+<h3>What work is involved in operating a 2i2c JupyterHub?<a class="headerlink" href="#what-work-is-involved-in-operating-a-2i2c-jupyterhub" title="Permalink to this heading">#</a></h3>
+<p>There are three main steps to operating any cloud infrastructure:</p>
+<ul class="simple">
+<li><p>Initial deployment</p></li>
+<li><p>Ongoing operation and debugging</p></li>
+<li><p>Enhancements and customizations</p></li>
+</ul>
+<p>This guide will primarily cover the first step - how to deploy a cloud service using Zero to JupyterHub that replicates the 2i2c JupyterHub service.
+However, note that operating and debugging cloud infrastructure, as well as customizing and upgrading it, take significant expertise and time.</p>
+<p>Below we’ll cover how you can deploy your own JupyterHub using your 2i2c JupyterHub configuration as a start.</p>
+<section id="find-your-2i2c-jupyterhub-configuration">
+<h4>Find your 2i2c JupyterHub configuration<a class="headerlink" href="#find-your-2i2c-jupyterhub-configuration" title="Permalink to this heading">#</a></h4>
+<p>2i2c JupyterHubs use the <a class="reference external" href="https://z2jh.jupyter.org">Zero to JupyterHub</a> guide for their configuration and deployments.
+We recommend familiarizing yourself with it, as it will be invaluable in helping you navigate how to run a JupyterHub that replicates the 2i2c JupyterHub service.</p>
+<p>All of the configuration for a 2i2c JupyterHub exists at the <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">infrastructure/</span></code> repository</span>. This is a “meta” repository that centralizes configuration and deployment of many 2i2c JupyterHubs.</p>
+<p>There are two main things you’ll need from this repository to deploy your hub:</p>
+<ol class="arabic simple">
+<li><p><strong>Your hub-specific configuration</strong>. <code class="docutils literal notranslate"><span class="pre">infrastructure/</span></code> contains <a class="reference external" href="https://github.com/2i2c-org/infrastructure/tree/master/config/clusters">configurations for each JupyterHub in YAML files</a>.</p>
+<ul class="simple">
+<li><p>Each <code class="docutils literal notranslate"><span class="pre">yaml</span></code> file is a Kubernetes cluster with a collection of hubs on it. The <a class="reference external" href="https://github.com/2i2c-org/infrastructure/blob/master/config/clusters/2i2c/cluster.yaml"><code class="docutils literal notranslate"><span class="pre">2i2c.cluster.yaml</span></code> configuration</a> contains most 2i2c hubs that do not have their own dedicated cluster.</p></li>
+<li><p>These files have an entry for each hub, which contains a <strong>Zero to JupyterHub configuration</strong> for your hub. You should find this configuration under <code class="docutils literal notranslate"><span class="pre">config/jupyterhub:</span></code>.</p></li>
+</ul>
+</li>
+<li><p><strong>Your helm chart template</strong>. In addition to your hub-specific configuration, your hub also has a “template configuration” that defines the basic setup of your hub infrastructure.
+Each template has a name (e.g., <code class="docutils literal notranslate"><span class="pre">dask-hub</span></code>) and maps onto a Helm configuration.
+You can <a class="reference external" href="https://github.com/2i2c-org/infrastructure/tree/master/helm-charts">find each template in this folder</a>.
+Look for the <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> file, as this contains the actual template configuration that you’ll use with your Zero to JupyterHub configuration.</p></li>
+</ol>
+<p>You should merge these two configuration files into a single one, for use later.
+Make sure to avoid duplicating any keys, if you have duplicate keys, update one with the values of the other.</p>
+</section>
+<section id="set-up-your-own-jupyterhub-on-kubernetes">
+<h4>Set up your own JupyterHub on Kubernetes<a class="headerlink" href="#set-up-your-own-jupyterhub-on-kubernetes" title="Permalink to this heading">#</a></h4>
+<p>Next, you should <a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io/en/stable/kubernetes/index.html">follow the Zero to JupyterHub for Kubernetes guide</a> to set up your own JupyterHub on a Kubernetes cluster.</p>
+<p>When you are asked to create a <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> file (your Helm Chart configuration), start with the basic configuration recommended in the guide.</p>
+<p>At the end of this step you should have a basic JupyterHub running on Kubernetes.</p>
+</section>
+<section id="enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration">
+<h4>Enhance your JupyterHub to use your 2i2c JupyterHub configuration<a class="headerlink" href="#enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration" title="Permalink to this heading">#</a></h4>
+<p>Now that you have your own JupyterHub running on Kubernetes, it’s time to customize it using your 2i2c JupyterHub configuration.
+Paste in the configuration that you copied above into your JupyterHub’s <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> file. Make sure to avoid duplicating any keys, if you have duplicate keys, update one with the values of the other.</p>
+<p>At the end of this step, you should have a JupyterHub running on Kubernetes that contains the configuration used to deploy your 2i2c JupyterHub.</p>
+</section>
+</section>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./admin/howto"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="new-hub.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Begin a new hub service</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="create-billing-account.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Billing and cloud accounts</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-your-home-directory">Download your home directory</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#replicate-your-own-2i2c-jupyterhub">Replicate your own 2i2c JupyterHub</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#understand-the-basic-infrastructure">Understand the basic infrastructure</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#skills-that-you-ll-need-to-accomplish-this">Skills that you’ll need to accomplish this</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#what-work-is-involved-in-operating-a-2i2c-jupyterhub">What work is involved in operating a 2i2c JupyterHub?</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#find-your-2i2c-jupyterhub-configuration">Find your 2i2c JupyterHub configuration</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#set-up-your-own-jupyterhub-on-kubernetes">Set up your own JupyterHub on Kubernetes</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration">Enhance your JupyterHub to use your 2i2c JupyterHub configuration</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 2i2c
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

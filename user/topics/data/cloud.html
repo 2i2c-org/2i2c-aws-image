@@ -1,0 +1,775 @@
+
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Cloud Object Storage &#8212; 2i2c Community Showcase Handbook</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../../../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
+    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
+    <script src="../../../_static/jquery.js"></script>
+    <script src="../../../_static/underscore.js"></script>
+    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../../_static/doctools.js"></script>
+    <script src="../../../_static/clipboard.min.js"></script>
+    <script src="../../../_static/copybutton.js"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../../_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../../_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'user/topics/data/cloud';</script>
+    <link rel="index" title="Index" href="../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../search.html" />
+    <link rel="next" title="Starting and customizing the software environment of a user server" href="../../howto/specify-unlisted-image.html" />
+    <link rel="prev" title="Share data files with your users" href="sharing.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+
+<a class="navbar-brand logo" href="../../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../../_static/logo.png" class="logo__image only-light" alt="2i2c Community Showcase Handbook - Home"/>
+    <script>document.write(`<img src="../../../_static/logo.png" class="logo__image only-dark" alt="2i2c Community Showcase Handbook - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../../index.html">
+                    Service Guide
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">About the service</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../about/service/options.html">Usecases and prices</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/index.html">Overview of hub features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/education.html">Education and teaching</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/distributions/research.html">Research and collaboration</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../about/service/index.html">Our collaborative service model</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/shared-responsibility.html">Shared responsibility model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/service-objectives.html">Service Level Objectives</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../about/service/comparison.html">Comparison to similar services</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference external" href="https://infrastructure.2i2c.org/reference/hubs/">See a table of our running hubs!</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Use the hub</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../policy/index.html">User policies</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../policy/code-of-conduct.html">Code of Conduct</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policy/acceptable-use.html">Acceptable Use Policy</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../policy/privacy.html">Privacy Policy</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data and Filesystem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="filesystem.html">Filesystem and user directory</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sharing.html">Share data files with your users</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">Cloud Object Storage</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../howto/specify-unlisted-image.html">Starting and customizing the software environment of a user server</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/configurator.html">Configure the hub with the Configurator</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../admin/howto/environment/index.html">User environment and interface</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../admin/howto/environment/hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/manage-users.html">User authentication and access</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/control-user-server.html">User server management</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/topics/network.html">Network Policy</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../community/events.html">Events and workshops</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/content.html">Content creation and sharing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../community/strategy.html">Community strategy and organizing</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/new-hub.html">Begin a new hub service</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/replicate.html">Migrate off of a JupyterHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../admin/howto/create-billing-account.html">Billing and cloud accounts</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../topic/cloud-costs.html">Estimate cloud costs</a></li>
+</ul>
+<p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../../about/terminology.html">Terminology reference</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+
+
+<div class="dropdown dropdown-source-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Source repositories">
+    <i class="fab fa-github"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase" target="_blank"
+   class="btn btn-sm btn-source-repository-button dropdown-item"
+   title="Source repository"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+<span class="btn__text-container">Repository</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li><a href="https://github.io/2i2c-org/community-showcase/issues/new?title=Issue%20on%20page%20%2Fuser/topics/data/cloud.html&body=Your%20issue%20content%20here." target="_blank"
+   class="btn btn-sm btn-source-issues-button dropdown-item"
+   title="Open an issue"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-lightbulb"></i>
+  </span>
+<span class="btn__text-container">Open issue</span>
+</a>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../../_sources/user/topics/data/cloud.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Cloud Object Storage</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-native-formats">Cloud-Native Formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-object-storage">Working with Object Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-data">Reading Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-data">Writing Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scratch-bucket">Scratch Bucket</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-catalogs">Data Catalogs</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cloud-object-storage">
+<h1>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Permalink to this heading">#</a></h1>
+<p>Your hub lives in the cloud.
+The preferred way to store data in the cloud is using <a class="reference external" href="https://aws.amazon.com/what-is-cloud-object-storage/">cloud object storage</a>, such as Amazon S3 or Google Cloud Storage.
+Cloud object storage is essentially a key/value storage system.
+They keys are strings, and the values are bytes of data.
+Data is read and written using HTTP calls.</p>
+<p>The performance of object storage is very different from file storage.
+On one hand, each individual <code class="docutils literal notranslate"><span class="pre">read</span> <span class="pre">/</span> <span class="pre">write</span></code> to object storage has a high overhead (10-100 ms), since it has to go over the network.
+On the other hand, object storage “scales out” nearly infinitely, meaning that we can make hundreds, thousands, or millions of concurrent reads / writes.
+This makes object storage well suited for distributed data analytics.
+However, data analysis software must be adapted to take advantage of these properties.</p>
+<section id="cloud-native-formats">
+<h2>Cloud-Native Formats<a class="headerlink" href="#cloud-native-formats" title="Permalink to this heading">#</a></h2>
+<p>Cloud-native file formats are formats that are designed from the beginning to
+work well with cloud object storage.
+These formats permit exploration of data and metadata without downloading of the
+entire file / dataset and work well with distributed parallel computing.
+Here we enumerate some popular cloud-native formats and their use cases:</p>
+<table class="table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Format</p></th>
+<th class="head"><p>Use Case</p></th>
+<th class="head"><p>Python Libraries</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://parquet.apache.org/">Apache Parquet</a></p></td>
+<td><p>Column-oriented data file format designed for efficient data storage and retrieval. Suitable for tabular-style data (rows and columns).</p></td>
+<td><p>pandas, dask.dataframe, vaex, pyarrow</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="http://zarr.dev/">Zarr</a></p></td>
+<td><p>Storage of large multidimensional arrays</p></td>
+<td><p>zarr, numpy, dask.array, xarray</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.cogeo.org/">Cloud Optimized Geotiff</a></p></td>
+<td><p>Geospatial raster data</p></td>
+<td><p>rasterio, rio-xarray</p></td>
+</tr>
+</tbody>
+</table>
+<p>There are other more specialized cloud-optimized formats for specific scientific domains.</p>
+<p>It is recommended to use cloud-native formats when working with big data in cloud object storage.</p>
+</section>
+<section id="working-with-object-storage">
+<h2>Working with Object Storage<a class="headerlink" href="#working-with-object-storage" title="Permalink to this heading">#</a></h2>
+<p>From a user perspective, the main challenge of working with object storage is the need
+to use more specialized tools, rather than just simple files / filenames, to manage data.
+Fortunately, excellent tools exist to make working with object storage easy and familiar.</p>
+<p>For python users, the main tool is <a class="reference external" href="https://filesystem-spec.readthedocs.io/en/latest/">filesystem spec</a>
+(fsspec), a set of packages which enable us to work with many different types of storage.
+Separate fsspec packages exist for each type of object storage:</p>
+<ul class="simple">
+<li><p><strong><a class="reference external" href="https://s3fs.readthedocs.io/en/latest/">s3fs</a></strong> - for working with AWS S3
+(Simple Storage Service) and compatible APIs. Most third-party object storage
+services (e.g. <a class="reference external" href="https://wasabi.com/">Wasabi</a> and <a class="reference external" href="https://openstoragenetwork.org/">Open Storage Newtork</a>)
+are compatible with S3.</p></li>
+<li><p><strong><a class="reference external" href="https://gcsfs.readthedocs.io/en/latest/">gcsfs</a></strong> - for working with Google
+Cloud Storage.</p></li>
+<li><p><strong><a class="reference external" href="https://github.com/fsspec/adlfs">adlfs</a></strong> - for working with Azure Data Lake
+and Azure BLOB Storage.</p></li>
+</ul>
+<p>Each system has its own unique mechanisms for authentication and authorization;
+consult the documentation links above for more details.</p>
+<section id="reading-data">
+<h3>Reading Data<a class="headerlink" href="#reading-data" title="Permalink to this heading">#</a></h3>
+<p>When reading data from cloud object storage, you have two general options:</p>
+<ul class="simple">
+<li><p>Download the data to the local filesystem; this is fine for small data, but not suitable for
+large data or cloud-optimized datasets. Downloads can be managed with
+<a class="reference external" href="https://www.fatiando.org/pooch/latest/">Pooch</a> or fsspec.</p></li>
+<li><p>Open the data with an application that understands how to stream data data
+over HTTP directly from object storage. This is suitable for large data and
+cloud-native formats.</p></li>
+</ul>
+<p>As an example of the latter use case, here is how you would open the
+<a class="reference external" href="https://registry.opendata.aws/mur/">NASA  Multi-Scale Ultra High Resolution (MUR) Sea Surface Temperature (SST)</a>
+dataset from the AWS Public Data program using Xarray:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;s3://mur-sst/zarr/&quot;</span><span class="p">,</span> <span class="n">engine</span><span class="o">=</span><span class="s2">&quot;zarr&quot;</span><span class="p">,</span> <span class="n">storage_options</span><span class="o">=</span><span class="p">{</span><span class="s2">&quot;anon&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">})</span>
+</pre></div>
+</div>
+</section>
+<section id="writing-data">
+<h3>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this heading">#</a></h3>
+<p>Writing data (and reading private data) requires credentials for authentication.
+2i2c does not provide credentials to individual users.
+Instead, 2i2c customers should manage their own cloud storage directly.
+See <a class="reference external" href="https://aws.amazon.com/s3/getting-started/">the Amazon S3</a>, <a class="reference external" href="https://cloud.google.com/storage">Google Cloud Storage</a>, and <a class="reference external" href="https://azure.microsoft.com/en-us/services/storage/blobs/">Azure Blob Storage</a> instructions for information on getting started.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This section refers to “S3 Storage” in a generic sense.
+Amazon S3 is the most well-known form of S3 storage, but something like it exists across each major cloud provider as well.</p>
+</div>
+<p>On S3-type storage, you will have a client key and client secret associated with you account.
+The following code creates a writeable filesystem:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">s3fs</span>
+<span class="n">fs</span> <span class="o">=</span> <span class="n">s3fs</span><span class="o">.</span><span class="n">S3FileSystem</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="s1">&#39;&lt;YOUR_CLIENT_KEY&gt;&#39;</span><span class="p">,</span> <span class="n">secret</span><span class="o">=</span><span class="s1">&#39;&lt;YOUR_CLIENT_SECRET&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Non-AWS S3 services (e.g. Wasabi Cloud) can be configured by passing an argument
+such as <code class="docutils literal notranslate"><span class="pre">client_kwargs={'endpoint_url':</span> <span class="pre">'https://s3.us-east-2.wasabisys.com'}</span></code>
+to <code class="docutils literal notranslate"><span class="pre">S3FileSystem</span></code>.</p>
+<p>For Google Cloud Storage, the best practice is to create a
+<a class="reference external" href="https://cloud.google.com/iam/docs/service-accounts">service account</a> with
+appropriate permissions to read / write to your private bucket.
+You upload your service account key (a <code class="docutils literal notranslate"><span class="pre">.json</span></code> file) to your hub
+home directory and then use it as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span> <span class="kn">import</span> <span class="nn">json</span>
+ <span class="kn">import</span> <span class="nn">gcsfs</span>
+ <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;&lt;your_token_file&gt;.json&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">token_file</span><span class="p">:</span>
+     <span class="n">token</span> <span class="o">=</span> <span class="n">json</span><span class="o">.</span><span class="n">load</span><span class="p">(</span><span class="n">token_file</span><span class="p">)</span>
+ <span class="n">gcs</span> <span class="o">=</span> <span class="n">gcsfs</span><span class="o">.</span><span class="n">GCSFileSystem</span><span class="p">(</span><span class="n">token</span><span class="o">=</span><span class="n">token</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>You can then read / write private files with the <code class="docutils literal notranslate"><span class="pre">gcs</span></code> object.</p>
+</section>
+</section>
+<section id="scratch-bucket">
+<h2>Scratch Bucket<a class="headerlink" href="#scratch-bucket" title="Permalink to this heading">#</a></h2>
+<p>Some 2i2c environments are configured with a “scratch bucket,” which
+allows you to temporarily store data (for example, when you need to store intermediate files during data transformations).
+Credentials to write to the scratch
+bucket are pre-loaded into your Hub’s user environment.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Any data in scratch buckets will be deleted once it is 7 days old.
+Do not use scratch buckets to store data permanently.</p>
+</div>
+<p>The location of your scratch bucket is contained in the environment variable <code class="docutils literal notranslate"><span class="pre">SCRATCH_BUCKET</span> </code>.</p>
+<p>For example, here is how you would write Xarray data to the scratch bucket
+in Zarr format.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">xarray</span> <span class="k">as</span> <span class="nn">xr</span>
+<span class="n">SCRATCH_BUCKET</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="s1">&#39;SCRATCH_BUCKET&#39;</span><span class="p">]</span> 
+<span class="n">ds</span> <span class="o">=</span> <span class="n">xr</span><span class="o">.</span><span class="n">tutorial</span><span class="o">.</span><span class="n">open_dataset</span><span class="p">(</span><span class="s2">&quot;rasm&quot;</span><span class="p">)</span>  <span class="c1"># load example data</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">to_zarr</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="n">SCRATCH_BUCKET</span><span class="si">}</span><span class="s1">/rasm.zarr&#39;</span><span class="p">)</span>  <span class="c1"># write data</span>
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>A common set of credentials is currently used for accessing scratch buckets.
+This means users can read, and potentially remove / overwrite, each others’
+data. You can avoid this problem by always using <code class="docutils literal notranslate"><span class="pre">SCRATCH_BUCKET</span></code> as a prefix.
+Still, you should not store any sensitive or mission-critical data in
+the scratch bucket.</p>
+</div>
+</section>
+<section id="data-catalogs">
+<h2>Data Catalogs<a class="headerlink" href="#data-catalogs" title="Permalink to this heading">#</a></h2>
+<p>To make it easier to discover share data in your project, it is recommended to use
+data catalogs.
+<a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> is a popular tool for making
+data catalogs in python.</p>
+<p>Below is an example of an intake data catalog for loading Zarr data in Xarray from
+OpenStorageNetwork.
+(This example is borrowed from the <a class="reference external" href="https://github.com/ocean-eddy-cpt/cpt-data/blob/master/catalog.yaml">Ocean Eddy CPT project</a>.)</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">plugins</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">source</span><span class="p">:</span>
+<span class="w">    </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">module</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">intake_xarray</span>
+
+<span class="nt">sources</span><span class="p">:</span>
+
+<span class="w">  </span><span class="nt">neverworld_five_day_averages</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Five-day-average fields from Neverworld2</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zarr</span>
+<span class="w">    </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">urlpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://Pangeo/ocean-eddy-cpt/5-day-averages/</span>
+<span class="w">      </span><span class="nt">consolidated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">storage_options</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">anon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">endpoint_url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://ncsa.osn.xsede.org&#39;</span>
+
+<span class="w">  </span><span class="nt">neverworld_quarter_degree_snapshots</span><span class="p">:</span>
+<span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">snapshots of fields from Neverworld2</span>
+<span class="w">    </span><span class="nt">driver</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">zarr</span>
+<span class="w">    </span><span class="nt">args</span><span class="p">:</span>
+<span class="w">      </span><span class="nt">urlpath</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">s3://Pangeo/ocean-eddy-cpt/quarter-degree/snapshots/</span>
+<span class="w">      </span><span class="nt">consolidated</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">      </span><span class="nt">storage_options</span><span class="p">:</span>
+<span class="w">        </span><span class="nt">anon</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">True</span>
+<span class="w">        </span><span class="nt">client_kwargs</span><span class="p">:</span>
+<span class="w">          </span><span class="nt">endpoint_url</span><span class="p">:</span><span class="w"> </span><span class="s">&#39;https://ncsa.osn.xsede.org&#39;</span>
+</pre></div>
+</div>
+<p>To use this catalog, place it online and share the URL with your team.</p>
+<p>Here is an example of how to use this catalog file:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">intake</span>
+<span class="n">cat_url</span> <span class="o">=</span> <span class="s2">&quot;https://raw.githubusercontent.com/ocean-eddy-cpt/cpt-data/master/catalog.yaml&quot;</span>
+<span class="n">cat</span> <span class="o">=</span> <span class="n">intake</span><span class="o">.</span><span class="n">open_catalog</span><span class="p">(</span><span class="n">cat_url</span><span class="p">)</span>
+<span class="nb">list</span><span class="p">(</span><span class="n">cat</span><span class="p">)</span>  <span class="c1"># discover what is in the catalog</span>
+<span class="n">ds</span> <span class="o">=</span> <span class="n">cat</span><span class="p">[</span><span class="s1">&#39;neverworld_five_day_averages&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">to_dask</span><span class="p">()</span>  <span class="c1"># open lazily with Xarray</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./user/topics/data"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sharing.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Share data files with your users</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../howto/specify-unlisted-image.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Starting and customizing the software environment of a user server</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#cloud-native-formats">Cloud-Native Formats</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-object-storage">Working with Object Storage</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#reading-data">Reading Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#writing-data">Writing Data</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scratch-bucket">Scratch Bucket</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#data-catalogs">Data Catalogs</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By 2i2c
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../../../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
