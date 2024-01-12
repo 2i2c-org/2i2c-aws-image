@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <script>DOCUMENTATION_OPTIONS.pagename = 'community/events';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Content creation and sharing" href="content.html" />
+    <link rel="next" title="Community strategy and organizing" href="strategy.html" />
     <link rel="prev" title="Network Policy" href="../admin/topics/network.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -211,6 +211,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Administer the hub</span></p>
 <ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../admin/howto/support.html">Get support</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../admin/howto/configurator.html">Configure the hub with the Configurator</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../admin/howto/environment/index.html">User environment and interface</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../admin/howto/environment/hub-user-image-template-guide.html">Create a custom user image for your hub</a></li>
@@ -223,8 +224,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Community leadership</span></p>
 <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Events and workshops</a></li>
-<li class="toctree-l1"><a class="reference internal" href="content.html">Content creation and sharing</a></li>
 <li class="toctree-l1"><a class="reference internal" href="strategy.html">Community strategy and organizing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/authoring.html">How do I Author and Preview Content using Jupyter Book?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="content/sharing.html">Content creation and sharing</a></li>
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Community representatives</span></p>
 <ul class="nav bd-sidenav">
@@ -235,7 +237,7 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 <p aria-level="2" class="caption" role="heading"><span class="caption-text">Reference</span></p>
 <ul class="nav bd-sidenav">
-<li class="toctree-l1"><a class="reference internal" href="../about/terminology.html">Terminology reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../reference/terminology.html">Terminology reference</a></li>
 </ul>
 
     </div>
@@ -487,7 +489,7 @@ This will take extra attention from the 2i2c engineering team.</p>
 This ensures that your user environment is human-readable and reproducible.</p></li>
 <li><p><strong>Put content in a repository</strong>. All of the materials for your workshop (e.g., Jupyter Notebooks, markdown files, etc) can be placed in a public repository.</p></li>
 <li><p><strong>Test your content and environment ahead of time</strong>. You should run your content from top to bottom on your JupyterHub, or on a service like <a class="reference external" href="http://mybinder.org">mybinder.org</a>, to ensure that it works as expected.
-If you are using <a class="reference internal" href="content.html#content-nbgitpuller"><span class="std std-ref">nbgitpuller</span></a>, generate a link and click it yourself to make sure that it resolves properly.</p></li>
+If you are using <a class="reference internal" href="content/sharing.html#content-nbgitpuller"><span class="std std-ref">nbgitpuller</span></a>, generate a link and click it yourself to make sure that it resolves properly.</p></li>
 <li><p><strong>Let the 2i2c team know that you’re about to have an event</strong>. We are likely already keeping track of when the event begins, but it is always a good idea to give a heads up so that the engineering team knows to expect an influx of users. Send an email to <code class="docutils literal notranslate"><span class="pre">support&#64;2i2c.org</span></code> letting them know what to expect.</p></li>
 <li><p><strong>(optionally) Triage event participants with a sample workflow</strong>. Many event organizers find it useful to ask potential participants to complete some basic exercises to make sure they have the right background. Create <a class="reference external" href="https://mybinder.org">a Binder link</a> for your event’s content (or for a subset of content you want people to try out) and ask them to complete it before the event begins.</p></li>
 </ul>
@@ -495,7 +497,7 @@ If you are using <a class="reference internal" href="content.html#content-nbgitp
 <section id="during-the-event">
 <h2>During the event<a class="headerlink" href="#during-the-event" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Use <code class="docutils literal notranslate"><span class="pre">nbgitpuller</span></code> to distribute content to attendees</strong>. The <a class="reference internal" href="content.html#content-nbgitpuller"><span class="std std-ref">nbgitpuller tool</span></a> to generate links that your hub’s users can click, and automatically pull in content into their user session. Go to <a class="reference external" href="http://nbgitpuller.link">nbgitpuller.link</a> to generate your own links.</p></li>
+<li><p><strong>Use <code class="docutils literal notranslate"><span class="pre">nbgitpuller</span></code> to distribute content to attendees</strong>. The <a class="reference internal" href="content/sharing.html#content-nbgitpuller"><span class="std std-ref">nbgitpuller tool</span></a> to generate links that your hub’s users can click, and automatically pull in content into their user session. Go to <a class="reference external" href="http://nbgitpuller.link">nbgitpuller.link</a> to generate your own links.</p></li>
 <li><p><strong>Ask your users to log-in at the start of the day</strong>. It can take a few moments for the JupyterHub to scale up when many users log in at once. For this reason, we recommend asking users to log into the hub <strong>before they need to start running code</strong>, in case it takes some time for the hub to begin.</p></li>
 </ul>
 </section>
@@ -548,11 +550,11 @@ In addition, your event repository is likely <a class="reference external" href=
       </div>
     </a>
     <a class="right-next"
-       href="content.html"
+       href="strategy.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Content creation and sharing</p>
+        <p class="prev-next-title">Community strategy and organizing</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -601,7 +603,7 @@ By 2i2c
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
