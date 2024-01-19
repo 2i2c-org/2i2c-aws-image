@@ -466,8 +466,8 @@ document.write(`
 </aside>
 <p><img alt="server-options" src="../../_images/server-options.png" /></p>
 <ol class="arabic simple" start="2">
-<li><p>Once your JupyterHub service has launched, open a <code class="docutils literal notranslate"><span class="pre">Terminal</span></code> from the launcher.</p></li>
-<li><p>In the terminal, use the command</p></li>
+<li><p>Once your JupyterHub service has launched, open a <strong>Terminal</strong> from the launcher.</p></li>
+<li><p>In the Terminal, use the command</p></li>
 </ol>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jupyter-book<span class="w"> </span>create<span class="w"> </span>mynewbook
 </pre></div>
@@ -498,12 +498,39 @@ document.write(`
 </div>
 <details class="sd-sphinx-override sd-dropdown sd-card sd-mb-3">
 <summary class="sd-summary-title sd-card-header">
-Enabling extensions<div class="sd-summary-down docutils">
+⚡ Enable custom extensions<div class="sd-summary-down docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-down" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M5.22 8.72a.75.75 0 000 1.06l6.25 6.25a.75.75 0 001.06 0l6.25-6.25a.75.75 0 00-1.06-1.06L12 14.44 6.28 8.72a.75.75 0 00-1.06 0z"></path></svg></div>
 <div class="sd-summary-up docutils">
 <svg version="1.1" width="1.5em" height="1.5em" class="sd-octicon sd-octicon-chevron-up" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M18.78 15.28a.75.75 0 000-1.06l-6.25-6.25a.75.75 0 00-1.06 0l-6.25 6.25a.75.75 0 101.06 1.06L12 9.56l5.72 5.72a.75.75 0 001.06 0z"></path></svg></div>
 </summary><div class="sd-summary-content sd-card-body docutils">
-<p class="sd-card-text">And here’s my dropdown content</p>
+<p class="sd-card-text">Jupyter Book comes pre-configured with several Sphinx extensions, however you may wish to add your own custom extensions. To do so:</p>
+<ol class="arabic simple">
+<li><p class="sd-card-text">View the list of available extensions by opening a Terminal and running</p></li>
+</ol>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>list
+...
+sphinxcontrib-applehelp<span class="w">       </span><span class="m">1</span>.0.8
+sphinxcontrib-bibtex<span class="w">          </span><span class="m">2</span>.5.0
+sphinxcontrib-devhelp<span class="w">         </span><span class="m">1</span>.0.6
+sphinxcontrib-htmlhelp<span class="w">        </span><span class="m">2</span>.0.5
+sphinxcontrib-jsmath<span class="w">          </span><span class="m">1</span>.0.1
+sphinxcontrib-mermaid<span class="w">         </span><span class="m">0</span>.9.2
+sphinxcontrib-qthelp<span class="w">          </span><span class="m">1</span>.0.7
+sphinxcontrib-serializinghtml<span class="w"> </span><span class="m">1</span>.1.10
+</pre></div>
+</div>
+<p class="sd-card-text">❗ Note that the list above is truncated.</p>
+<p class="sd-card-text">If the extension you require is not in this list, then please contact your Hub Admin to request installation.</p>
+<ol class="arabic simple" start="2">
+<li><p class="sd-card-text">To enable the extension, open <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> and add the following</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="c1"># Custom Sphinx extensions</span>
+<span class="nt">sphinx</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">extra_extensions</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">sphinxcontrib.&lt;extension-name&gt;</span>
+</pre></div>
+</div>
+<p class="sd-card-text">For more information, see the <a class="reference external" href="https://jupyterbook.org/en/stable/advanced/sphinx.html#custom-sphinx-extensions">Jupyter Book docs – Custom Sphinx extensions</a>.</p>
 </div>
 </details></section>
 <section id="table-of-contents-toc-yml">
@@ -545,14 +572,14 @@ Enabling extensions<div class="sd-summary-down docutils">
 <a class="reference internal image-reference" href="../../_images/build-and-preview.gif"><img alt="../../_images/build-and-preview.gif" src="../../_images/build-and-preview.gif" style="width: 100%;" /></a>
 </figure>
 <ol class="arabic simple" id="step-1">
-<li><p>From a terminal, execute the command</p></li>
+<li><p>From a Terminal, execute the command</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>jupyter-book<span class="w"> </span>build<span class="w"> </span>mynewbook
 </pre></div>
 </div>
 <p>to build your Jupyter Book, which generates HTML files from your content and places them in the <code class="docutils literal notranslate"><span class="pre">mynewbook/_build/html/</span></code> folder.</p>
 <ol class="arabic simple" start="2">
-<li><p>Open a <strong>new</strong> terminal and navigate to the HTML folder using the command</p></li>
+<li><p>Open a <strong>new</strong> Terminal and navigate to the HTML folder using the command</p></li>
 </ol>
 <div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>mynewbook/_build/html
 </pre></div>
@@ -564,23 +591,14 @@ Enabling extensions<div class="sd-summary-down docutils">
 </pre></div>
 </div>
 <ol class="arabic simple" start="4">
-<li><p>Preview your documentation website in an iFrame within JupyterLab</p></li>
+<li><p>Preview your documentation website by opening the following URL in another tab in your browser to preview your documentation website.</p></li>
 </ol>
-<aside class="margin sidebar">
-<p class="sidebar-title">Preview in your browser</p>
-<p>Alternatively, you can open this URL directly in your browser to preview your documentation website.</p>
-</aside>
-<ul class="simple">
-<li><p>By clicking <code class="docutils literal notranslate"><span class="pre">View</span> <span class="pre">&gt;</span> <span class="pre">Activate</span> <span class="pre">Command</span> <span class="pre">Palette</span></code> in the menu bar</p></li>
-<li><p>Search for the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">iFrame</span></code> command</p></li>
-<li><p>Copy and paste the following URL (<strong>edit as required</strong>) into the <code class="docutils literal notranslate"><span class="pre">Open</span> <span class="pre">Site</span></code> textbox</p></li>
-</ul>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">https</span><span class="p">:</span><span class="o">//&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">hub</span><span class="o">-</span><span class="n">url</span><span class="o">&gt;/</span><span class="n">user</span><span class="o">/&lt;</span><span class="n">your</span><span class="o">-</span><span class="n">username</span><span class="o">&gt;/</span><span class="n">proxy</span><span class="o">/</span><span class="mi">8000</span><span class="o">/</span><span class="n">index</span><span class="o">.</span><span class="n">html</span>
 </pre></div>
 </div>
 <section id="edit-and-rebuild">
 <h3>Edit and rebuild<a class="headerlink" href="#edit-and-rebuild" title="Permalink to this heading">#</a></h3>
-<p>After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from <a class="reference internal" href="#step-1"><span class="std std-ref">Step 1</span></a>, and then refresh your iFrame/website to preview your changes.</p>
+<p>After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from <a class="reference internal" href="#step-1"><span class="std std-ref">Step 1</span></a>, and then refresh the webpage to preview your changes.</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>
 <p>If your book’s Table of Contents doesn’t update after changing the <code class="docutils literal notranslate"><span class="pre">_toc.yml</span></code> file, try:</p>
