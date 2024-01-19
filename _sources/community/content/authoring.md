@@ -4,7 +4,7 @@
 This guide shows you how to author and preview content using Jupyter Book within your 2i2c Managed JupyterHub Service.
 
 ```{note}
-This use case is currrently for authoring and previewing content on the Community Showcase Hub only. A separate guide will follow describing how to author, preview, deploy and publish Jupyter Book for other domains. 
+This use case is currrently for authoring and previewing local content only. A separate guide will follow describing how to deploy and publish Jupyter Book for other domains using the [Community Showcase Hub](https://github.com/2i2c-org/community-showcase) template. 
 ```
 
 ## Set up Jupyter Book
@@ -25,11 +25,10 @@ We recommend minimal CPU resources since authoring content is not computationall
 $ jupyter-book create mynewbook
 ```
 
-to create a **template** for your Jupyter Book documentation. This creates a new folder called `mynewbook` in your home directory, which will appear in the file explorer to the left-hand side. The contents of this template folder is as follows:
+to create a **template** for your Jupyter Book documentation. This creates a new folder called `mynewbook` in your home directory, which will appear in the file explorer to the left-hand side. The contents of this template folder are as follows:
 
-```
-$ tree mybookname
-mybookname/
+```shell
+mynewbook/
 ├── _config.yml
 ├── _toc.yml
 ├── intro.md
@@ -56,7 +55,9 @@ copyright                   : "2024"  # Copyright year to be placed in the foote
 logo                        : "logo.png"  # A path to the book logo
 ```
 
-<!-- JW: Might want to talk about/link to version control here, since you can specify the remote-hosted repo in the `_config.yml` file. -->
+```{dropdown} Enabling extensions
+And here's my dropdown content
+```
 
 ### Table of contents (`_toc.yml`)
 
@@ -142,7 +143,7 @@ After editing content files in your Jupyter Book, you will need to re-build the 
 If your book's Table of Contents doesn't update after changing the `_toc.yml` file, try:
 
 ```console
-$ jupyter-book build --all mybookname
+$ jupyter-book build --all mynewbook
 ```
 
 which rebuilds *all* files and not just modified files  only.
