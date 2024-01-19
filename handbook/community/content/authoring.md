@@ -4,26 +4,26 @@
 This guide shows you how to author and preview content using Jupyter Book within your 2i2c Managed JupyterHub Service.
 
 ```{note}
-This use case is currrently for authoring and previewing local content only. A separate guide will follow describing how to deploy and publish Jupyter Book for other domains using the [Community Showcase Hub](https://github.com/2i2c-org/community-showcase) template. 
+This use case is currently for authoring and previewing local content only. A separate guide will follow describing how to deploy and publish Jupyter Book for other domains using the [Community Showcase Hub](https://github.com/2i2c-org/community-showcase) template. 
 ```
 
 ## Set up Jupyter Book
 
 1. From your hub homepage, select the server option you require for your work and select the `Handbook Authoring` image from the dropdown selection box.
 
-```{margin} Server options
-We recommend minimal CPU resources since authoring content is not computationally intensive.
-```
+   ```{margin} Server options
+   We recommend minimal CPU resources since authoring content is not computationally intensive.
+   ```
 
-![server-options](./media/server-options.png)
+   ![server-options](./media/server-options.png)
 
-2. Once your JupyterHub service has launched, open a `Terminal` from the launcher.
+1. Once your JupyterHub service has launched, open a `Terminal` from the launcher.
 
-3. In the terminal, use the command
+1. In the terminal, use the command
 
-```bash
-$ jupyter-book create mynewbook
-```
+  ```shell
+  jupyter-book create mynewbook
+  ```
 
 to create a **template** for your Jupyter Book documentation. This creates a new folder called `mynewbook` in your home directory, which will appear in the file explorer to the left-hand side. The contents of this template folder are as follows:
 
@@ -101,39 +101,40 @@ Try editing the sample files in the template folder to familiarise yourself with
 :::
 
 (step-1)=
+
 1. From a terminal, execute the command
 
-```shell
-$ jupyter-book build mynewbook
-```
+   ```shell
+   jupyter-book build mynewbook
+   ```
 
-to build your Jupyter Book, which generates HTML files from your content and places them in the `mynewbook/_build/html/` folder.
+   to build your Jupyter Book, which generates HTML files from your content and places them in the `mynewbook/_build/html/` folder.
 
-2. Open a **new** terminal and navigate to the HTML folder using the command
+1. Open a **new** terminal and navigate to the HTML folder using the command
 
-```shell
-$ cd mynewbook/_build/html
-```
+   ```shell
+   $ cd mynewbook/_build/html
+   ```
 
-3. Run a simple Python webserver with the command
+1. Run a simple Python webserver with the command
 
-```shell
-$ python -m http.server
-```
+   ```shell
+   python -m http.server
+   ```
 
-4. Preview your documentation website in an iFrame within JupyterLab
+1. Preview your documentation website in an iFrame within JupyterLab
 
-```{margin} Preview in your browser
-Alternatively, you can open this URL directly in your browser to preview your documentation website.
-```
+   ```{margin} Preview in your browser
+   Alternatively, you can open this URL directly in your browser to preview your documentation website.
+   ```
 
-  - By clicking `View > Activate Command Palette` in the menu bar
-  - Search for the `Open iFrame` command 
-  - Copy and paste the following URL (**edit as required**) into the `Open Site` textbox
-  
-  ```
-  https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
-  ```
+   - By clicking `View > Activate Command Palette` in the menu bar
+   - Search for the `Open iFrame` command 
+   - Copy and paste the following URL (**edit as required**) into the `Open Site` textbox
+
+   ```shell
+   https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
+   ```
 
 ### Edit and rebuild
 
@@ -146,5 +147,5 @@ If your book's Table of Contents doesn't update after changing the `_toc.yml` fi
 $ jupyter-book build --all mynewbook
 ```
 
-which rebuilds *all* files and not just modified files  only.
+which rebuilds *all* files and not just modified files only.
 ````
