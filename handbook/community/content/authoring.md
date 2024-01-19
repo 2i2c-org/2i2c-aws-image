@@ -17,9 +17,9 @@ This use case is currently for authoring and previewing local content only. A se
 
    ![server-options](./media/server-options.png)
 
-1. Once your JupyterHub service has launched, open a `Terminal` from the launcher.
+1. Once your JupyterHub service has launched, open a **Terminal** from the launcher.
 
-1. In the terminal, use the command
+1. In the Terminal, use the command
 
   ```shell
   jupyter-book create mynewbook
@@ -55,9 +55,36 @@ copyright                   : "2024"  # Copyright year to be placed in the foote
 logo                        : "logo.png"  # A path to the book logo
 ```
 
-```{dropdown} Enabling extensions
-And here's my dropdown content
+````{dropdown} ⚡ Enable custom extensions
+Jupyter Book comes pre-configured with several Sphinx extensions, however you may wish to add your own custom extensions. To do so:
+
+1. View the list of available extensions by opening a Terminal and running
+```shell
+$ pip list
+...
+sphinxcontrib-applehelp       1.0.8
+sphinxcontrib-bibtex          2.5.0
+sphinxcontrib-devhelp         1.0.6
+sphinxcontrib-htmlhelp        2.0.5
+sphinxcontrib-jsmath          1.0.1
+sphinxcontrib-mermaid         0.9.2
+sphinxcontrib-qthelp          1.0.7
+sphinxcontrib-serializinghtml 1.1.10
 ```
+❗ Note that the list above is truncated.  
+
+If the extension you require is not in this list, then please contact your Hub Admin to request installation.  
+
+2. To enable the extension, open `_toc.yml` and add the following
+```yaml
+# Custom Sphinx extensions
+sphinx:
+  extra_extensions:
+  - sphinxcontrib.<extension-name>
+```
+
+For more information, see the [Jupyter Book docs – Custom Sphinx extensions](https://jupyterbook.org/en/stable/advanced/sphinx.html#custom-sphinx-extensions).
+````
 
 ### Table of contents (`_toc.yml`)
 
@@ -101,8 +128,7 @@ Try editing the sample files in the template folder to familiarise yourself with
 :::
 
 (step-1)=
-
-1. From a terminal, execute the command
+1. From a Terminal, execute the command
 
    ```shell
    jupyter-book build mynewbook
@@ -110,10 +136,10 @@ Try editing the sample files in the template folder to familiarise yourself with
 
    to build your Jupyter Book, which generates HTML files from your content and places them in the `mynewbook/_build/html/` folder.
 
-1. Open a **new** terminal and navigate to the HTML folder using the command
+1. Open a **new** Terminal and navigate to the HTML folder using the command
 
    ```shell
-   $ cd mynewbook/_build/html
+   cd mynewbook/_build/html
    ```
 
 1. Run a simple Python webserver with the command
@@ -122,23 +148,15 @@ Try editing the sample files in the template folder to familiarise yourself with
    python -m http.server
    ```
 
-1. Preview your documentation website in an iFrame within JupyterLab
-
-   ```{margin} Preview in your browser
-   Alternatively, you can open this URL directly in your browser to preview your documentation website.
-   ```
-
-   - By clicking `View > Activate Command Palette` in the menu bar
-   - Search for the `Open iFrame` command 
-   - Copy and paste the following URL (**edit as required**) into the `Open Site` textbox
-
-   ```shell
-   https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
-   ```
+4. Preview your documentation website by opening the following URL in another tab in your browser to preview your documentation website.
+  
+```shell
+https://<your-hub-url>/user/<your-username>/proxy/8000/index.html
+```
 
 ### Edit and rebuild
 
-After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from [Step 1](step-1), and then refresh your iFrame/website to preview your changes.
+After editing content files in your Jupyter Book, you will need to re-build the HTML pages using the command from [Step 1](step-1), and then refresh the webpage to preview your changes.
 
 ````{tip}
 If your book's Table of Contents doesn't update after changing the `_toc.yml` file, try:
