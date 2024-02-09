@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>User server management &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/control-user-server';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
 </ul>
@@ -449,9 +455,9 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="user-server-management">
-<h1>User server management<a class="headerlink" href="#user-server-management" title="Permalink to this heading">#</a></h1>
+<h1>User server management<a class="headerlink" href="#user-server-management" title="Link to this heading">#</a></h1>
 <section id="take-control-of-a-user-s-server">
-<h2>Take control of a user’s server<a class="headerlink" href="#take-control-of-a-user-s-server" title="Permalink to this heading">#</a></h2>
+<h2>Take control of a user’s server<a class="headerlink" href="#take-control-of-a-user-s-server" title="Link to this heading">#</a></h2>
 <p>Hub admins can unilaterally perform actions on a user’s server via the
 <strong>Administrator’s Panel</strong>. These are primarily used to debug a user’s session
 easily.</p>
@@ -459,7 +465,7 @@ easily.</p>
 in your hub control panel.  Alternatively, you can go to this URL in your
 browser: <code class="docutils literal notranslate"><span class="pre">https://&lt;your-hub-url&gt;/hub/admin</span></code>.</p>
 <section id="access-a-user-s-server">
-<span id="user-server-access"></span><h3>Access a user’s server<a class="headerlink" href="#access-a-user-s-server" title="Permalink to this heading">#</a></h3>
+<span id="user-server-access"></span><h3>Access a user’s server<a class="headerlink" href="#access-a-user-s-server" title="Link to this heading">#</a></h3>
 <p>Accessing a user’s server is useful when trying to debug or reproduce an issue they might have. This facility is available to admins via the admin panel.</p>
 <ol class="arabic">
 <li><p>In the admin panel, you can click <span class="guilabel">access server</span> to gain control of a user’s
@@ -468,7 +474,7 @@ first and wait for it to start.</p>
 <figure class="align-default" id="id1">
 <img alt="../../_images/access-server.png" src="../../_images/access-server.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Clicking “access server” will allow you to control the user’s session.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 7 </span><span class="caption-text">Clicking “access server” will allow you to control the user’s session.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </li>
@@ -492,7 +498,7 @@ changes to their code or notebook outputs.</p>
 </ol>
 </section>
 <section id="access-user-logs">
-<h3>Access user logs<a class="headerlink" href="#access-user-logs" title="Permalink to this heading">#</a></h3>
+<h3>Access user logs<a class="headerlink" href="#access-user-logs" title="Link to this heading">#</a></h3>
 <p>For user images that are <a class="reference internal" href="environment/index.html#environment-image"><span class="std std-ref">built with repo2docker</span></a> and that do not define a custom <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code>, the logs of each user’s Jupyter server are located in their home directory, at <code class="docutils literal notranslate"><span class="pre">~/.jupyter-server-log.txt</span></code>.
 These contain information about every event that occurred as a part of a user’s session, and are useful for debugging unexpected errors and problems.</p>
 <p>For example, to print the contents of your own user server log:</p>
@@ -507,7 +513,7 @@ These contain information about every event that occurred as a part of a user’
 <p>To access a <strong>different user’s</strong> server logs, you can <a class="reference internal" href="#user-server-access"><span class="std std-ref">access their server</span></a> and run the same command above to print their logs.</p>
 </section>
 <section id="stop-or-start-a-user-s-server">
-<span id="user-server-stopping"></span><h3>Stop or start a user’s server<a class="headerlink" href="#stop-or-start-a-user-s-server" title="Permalink to this heading">#</a></h3>
+<span id="user-server-stopping"></span><h3>Stop or start a user’s server<a class="headerlink" href="#stop-or-start-a-user-s-server" title="Link to this heading">#</a></h3>
 <p>Sometimes, you need to just turn a user’s server on and off. You can
 also do this from the admin interface, by hitting the <span class="guilabel">Stop server</span>
 button, waiting for the server to stop, and the <span class="guilabel">Start server</span> button
@@ -525,7 +531,7 @@ Active notebooks have their kernel killed as well.</p>
 </section>
 </section>
 <section id="stop-user-servers-after-inactivity">
-<h2>Stop user servers after inactivity<a class="headerlink" href="#stop-user-servers-after-inactivity" title="Permalink to this heading">#</a></h2>
+<h2>Stop user servers after inactivity<a class="headerlink" href="#stop-user-servers-after-inactivity" title="Link to this heading">#</a></h2>
 <p>To ensure efficient resource usage, user servers without interactive usage for a
 period of time (default <code class="docutils literal notranslate"><span class="pre">1h</span></code>) are automatically stopped (via
 <a class="reference external" href="https://github.com/jupyterhub/jupyterhub-idle-culler">jupyterhub-idle-culler</a>).
@@ -541,25 +547,25 @@ culling user servers, not culling kernels.</p>
 </div>
 </section>
 <section id="stop-user-servers-after-maximum-age">
-<h2>Stop user servers after maximum age<a class="headerlink" href="#stop-user-servers-after-maximum-age" title="Permalink to this heading">#</a></h2>
+<h2>Stop user servers after maximum age<a class="headerlink" href="#stop-user-servers-after-maximum-age" title="Link to this heading">#</a></h2>
 <p>As a failsafe <a class="reference external" href="https://github.com/jupyterhub/jupyterhub-idle-culler">jupyterhub-idle-culler</a> is by 2i2c’s defaults configured to stop
 user servers that has been running for more than 7 days. This max age can be
 re-configured.</p>
 </section>
 <section id="stop-user-kernels-after-inactivity">
-<h2>Stop user kernels after inactivity<a class="headerlink" href="#stop-user-kernels-after-inactivity" title="Permalink to this heading">#</a></h2>
+<h2>Stop user kernels after inactivity<a class="headerlink" href="#stop-user-kernels-after-inactivity" title="Link to this heading">#</a></h2>
 <p>In addition to the user <em>server</em>, there may also be culling at the <em>kernel</em> level.
 The kernel is the thing that actually “runs code”, and a kernel without any activity for some time means that somebody has not executed code in that time.</p>
 <p>By default, kernels will be checked for activity <strong>every <code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">minutes</span></code></strong>.
 All kernels that haven’t shown activity in <strong>in the last hour</strong> will be stopped by the <a class="reference external" href="https://github.com/jupyterhub/jupyterhub-idle-culler">jupyterhub-idle-culler</a>.</p>
 <p>This window can be configured if you’d like to change the window of inactivity needed before user kernels will be stopped.
-See the <span class="xref myst">Hub Engineer’s guide</span> for some documentation on this.</p>
+See the <a class="reference internal" href="#infra:configure:culling"><span class="xref myst">Hub Engineer’s guide</span></a> for some documentation on this.</p>
 </section>
 <section id="disable-hub-access-for-all-users">
-<h2>Disable hub access for all users<a class="headerlink" href="#disable-hub-access-for-all-users" title="Permalink to this heading">#</a></h2>
+<h2>Disable hub access for all users<a class="headerlink" href="#disable-hub-access-for-all-users" title="Link to this heading">#</a></h2>
 <p>In some cases, you may want to temporarily disable hub access for all users.
 For example, if you are concerned that users on your hub are taking inappropriate actions, and you wish to stop all activity before investigating.</p>
-<p><strong>To prevent all user sessions from starting</strong>, you can use <a class="reference internal" href="configurator.html"><span class="doc std std-doc">the configurator UI</span></a> to choose a user image that does not start.</p>
+<p><strong>To prevent all user sessions from starting</strong>, you can use <a class="reference internal" href="configurator.html"><span class="std std-doc">the configurator UI</span></a> to choose a user image that does not start.</p>
 <ol class="arabic">
 <li><p>Go to your hub’s configurator menu (at <code class="docutils literal notranslate"><span class="pre">{{</span> <span class="pre">your</span> <span class="pre">hub</span> <span class="pre">URL</span> <span class="pre">}}/services/configurator</span></code>).</p></li>
 <li><p>Under <span class="guilabel">User Docker Image</span>, paste the following text:</p>

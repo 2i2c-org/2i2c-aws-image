@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Migrate off of a JupyterHub &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/replicate';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
 </ul>
@@ -451,12 +457,12 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="migrate-off-of-a-jupyterhub">
-<h1>Migrate off of a JupyterHub<a class="headerlink" href="#migrate-off-of-a-jupyterhub" title="Permalink to this heading">#</a></h1>
+<h1>Migrate off of a JupyterHub<a class="headerlink" href="#migrate-off-of-a-jupyterhub" title="Link to this heading">#</a></h1>
 <p>A core tenet of 2i2c is the <a class="reference external" href="https://2i2c.org/right-to-replicate">Right to Replicate</a>.
 This means that we want it to be as easy as possible for our users to deploy their own infrastructure that replicates a 2i2c JupyterHub, without requiring 2i2c to be involved.</p>
 <p>This page is a short guide on how you can migrate off of a 2i2c JupyterHub, either to work locally or to deploy your own JupyterHub.</p>
 <section id="download-your-home-directory">
-<h2>Download your home directory<a class="headerlink" href="#download-your-home-directory" title="Permalink to this heading">#</a></h2>
+<h2>Download your home directory<a class="headerlink" href="#download-your-home-directory" title="Link to this heading">#</a></h2>
 <p>You might want to download your entire home directory for many
 reasons - to get data off a hub that is closing, to migrate to
 a different service, for archival purposes, etc. Your home directory
@@ -484,19 +490,19 @@ will <em>not</em> work.</p>
 </div>
 </section>
 <section id="replicate-your-own-2i2c-jupyterhub">
-<h2>Replicate your own 2i2c JupyterHub<a class="headerlink" href="#replicate-your-own-2i2c-jupyterhub" title="Permalink to this heading">#</a></h2>
+<h2>Replicate your own 2i2c JupyterHub<a class="headerlink" href="#replicate-your-own-2i2c-jupyterhub" title="Link to this heading">#</a></h2>
 <p>2i2c JupyterHubs are built entirely with open source tools that are community-led.
 We prioritize tools with diverse, multi-stakeholder communities, which maximizes the chances that the tools will continue to be broadly useful for a long time to come.</p>
 <p>This section describes how you could replicate your own JupyterHub that closely follows the setup used by 2i2c.</p>
 <section id="understand-the-basic-infrastructure">
-<h3>Understand the basic infrastructure<a class="headerlink" href="#understand-the-basic-infrastructure" title="Permalink to this heading">#</a></h3>
+<h3>Understand the basic infrastructure<a class="headerlink" href="#understand-the-basic-infrastructure" title="Link to this heading">#</a></h3>
 <p>2i2c JupyterHubs use the official <a class="reference external" href="https://github.com/jupyterhub/helm-chart">JupyterHub Helm Chart</a> for their configuration and deployment.
 They run on an open-source platform called <a class="reference external" href="https://kubernetes.io/">Kubernetes</a>, which allows you to deploy infrastructure on a variety of cloud providers.
 We use a tool called <a class="reference external" href="https://helm.sh/">Helm</a> to manage your Kubernetes cluster in order to provide the JupyterHub service that makes up a 2i2c JupyterHub.</p>
 <p>All of these tools are covered in the excellent <a class="reference external" href="https://z2jh.jupyter.org">Zero to JupyterHub for Kubernetes guide</a>, which 2i2c JupyterHubs follow quite closely.</p>
 </section>
 <section id="skills-that-you-ll-need-to-accomplish-this">
-<h3>Skills that you’ll need to accomplish this<a class="headerlink" href="#skills-that-you-ll-need-to-accomplish-this" title="Permalink to this heading">#</a></h3>
+<h3>Skills that you’ll need to accomplish this<a class="headerlink" href="#skills-that-you-ll-need-to-accomplish-this" title="Link to this heading">#</a></h3>
 <p>There are many skills needed in operating cloud services.
 We’ll cover a few key pieces below (note that they may be provided by either a single person, or multiple people).
 We’ll refer to the group of people that run your cloud infrastructure the <strong>Site Reliability Team</strong>.</p>
@@ -526,7 +532,7 @@ Finally, there are an increasing number of communities in higher education that 
 </div>
 </section>
 <section id="what-work-is-involved-in-operating-a-2i2c-jupyterhub">
-<h3>What work is involved in operating a 2i2c JupyterHub?<a class="headerlink" href="#what-work-is-involved-in-operating-a-2i2c-jupyterhub" title="Permalink to this heading">#</a></h3>
+<h3>What work is involved in operating a 2i2c JupyterHub?<a class="headerlink" href="#what-work-is-involved-in-operating-a-2i2c-jupyterhub" title="Link to this heading">#</a></h3>
 <p>There are three main steps to operating any cloud infrastructure:</p>
 <ul class="simple">
 <li><p>Initial deployment</p></li>
@@ -537,10 +543,10 @@ Finally, there are an increasing number of communities in higher education that 
 However, note that operating and debugging cloud infrastructure, as well as customizing and upgrading it, take significant expertise and time.</p>
 <p>Below we’ll cover how you can deploy your own JupyterHub using your 2i2c JupyterHub configuration as a start.</p>
 <section id="find-your-2i2c-jupyterhub-configuration">
-<h4>Find your 2i2c JupyterHub configuration<a class="headerlink" href="#find-your-2i2c-jupyterhub-configuration" title="Permalink to this heading">#</a></h4>
+<h4>Find your 2i2c JupyterHub configuration<a class="headerlink" href="#find-your-2i2c-jupyterhub-configuration" title="Link to this heading">#</a></h4>
 <p>2i2c JupyterHubs use the <a class="reference external" href="https://z2jh.jupyter.org">Zero to JupyterHub</a> guide for their configuration and deployments.
 We recommend familiarizing yourself with it, as it will be invaluable in helping you navigate how to run a JupyterHub that replicates the 2i2c JupyterHub service.</p>
-<p>All of the configuration for a 2i2c JupyterHub exists at the <span class="xref myst"><code class="docutils literal notranslate"><span class="pre">infrastructure/</span></code> repository</span>. This is a “meta” repository that centralizes configuration and deployment of many 2i2c JupyterHubs.</p>
+<p>All of the configuration for a 2i2c JupyterHub exists at the <a class="reference internal" href="#infra:index"><span class="xref myst"><code class="docutils literal notranslate"><span class="pre">infrastructure/</span></code> repository</span></a>. This is a “meta” repository that centralizes configuration and deployment of many 2i2c JupyterHubs.</p>
 <p>There are two main things you’ll need from this repository to deploy your hub:</p>
 <ol class="arabic simple">
 <li><p><strong>Your hub-specific configuration</strong>. <code class="docutils literal notranslate"><span class="pre">infrastructure/</span></code> contains <a class="reference external" href="https://github.com/2i2c-org/infrastructure/tree/master/config/clusters">configurations for each JupyterHub in YAML files</a>.</p>
@@ -558,13 +564,13 @@ Look for the <code class="docutils literal notranslate"><span class="pre">values
 Make sure to avoid duplicating any keys, if you have duplicate keys, update one with the values of the other.</p>
 </section>
 <section id="set-up-your-own-jupyterhub-on-kubernetes">
-<h4>Set up your own JupyterHub on Kubernetes<a class="headerlink" href="#set-up-your-own-jupyterhub-on-kubernetes" title="Permalink to this heading">#</a></h4>
+<h4>Set up your own JupyterHub on Kubernetes<a class="headerlink" href="#set-up-your-own-jupyterhub-on-kubernetes" title="Link to this heading">#</a></h4>
 <p>Next, you should <a class="reference external" href="https://zero-to-jupyterhub.readthedocs.io/en/stable/kubernetes/index.html">follow the Zero to JupyterHub for Kubernetes guide</a> to set up your own JupyterHub on a Kubernetes cluster.</p>
 <p>When you are asked to create a <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> file (your Helm Chart configuration), start with the basic configuration recommended in the guide.</p>
 <p>At the end of this step you should have a basic JupyterHub running on Kubernetes.</p>
 </section>
 <section id="enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration">
-<h4>Enhance your JupyterHub to use your 2i2c JupyterHub configuration<a class="headerlink" href="#enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration" title="Permalink to this heading">#</a></h4>
+<h4>Enhance your JupyterHub to use your 2i2c JupyterHub configuration<a class="headerlink" href="#enhance-your-jupyterhub-to-use-your-2i2c-jupyterhub-configuration" title="Link to this heading">#</a></h4>
 <p>Now that you have your own JupyterHub running on Kubernetes, it’s time to customize it using your 2i2c JupyterHub configuration.
 Paste in the configuration that you copied above into your JupyterHub’s <code class="docutils literal notranslate"><span class="pre">values.yaml</span></code> file. Make sure to avoid duplicating any keys, if you have duplicate keys, update one with the values of the other.</p>
 <p>At the end of this step, you should have a JupyterHub running on Kubernetes that contains the configuration used to deploy your 2i2c JupyterHub.</p>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Cloud Object Storage &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user/topics/data/cloud';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data and Filesystem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="filesystem.html">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Cloud Object Storage</a></li>
 </ul>
@@ -447,7 +453,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cloud-object-storage">
-<h1>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Permalink to this heading">#</a></h1>
+<h1>Cloud Object Storage<a class="headerlink" href="#cloud-object-storage" title="Link to this heading">#</a></h1>
 <p>Your hub lives in the cloud.
 The preferred way to store data in the cloud is using <a class="reference external" href="https://aws.amazon.com/what-is-cloud-object-storage/">cloud object storage</a>, such as Amazon S3 or Google Cloud Storage.
 Cloud object storage is essentially a key/value storage system.
@@ -459,7 +465,7 @@ On the other hand, object storage “scales out” nearly infinitely, meaning th
 This makes object storage well suited for distributed data analytics.
 However, data analysis software must be adapted to take advantage of these properties.</p>
 <section id="cloud-native-formats">
-<h2>Cloud-Native Formats<a class="headerlink" href="#cloud-native-formats" title="Permalink to this heading">#</a></h2>
+<h2>Cloud-Native Formats<a class="headerlink" href="#cloud-native-formats" title="Link to this heading">#</a></h2>
 <p>Cloud-native file formats are formats that are designed from the beginning to
 work well with cloud object storage.
 These formats permit exploration of data and metadata without downloading of the
@@ -491,7 +497,7 @@ Here we enumerate some popular cloud-native formats and their use cases:</p>
 <p>It is recommended to use cloud-native formats when working with big data in cloud object storage.</p>
 </section>
 <section id="working-with-object-storage">
-<h2>Working with Object Storage<a class="headerlink" href="#working-with-object-storage" title="Permalink to this heading">#</a></h2>
+<h2>Working with Object Storage<a class="headerlink" href="#working-with-object-storage" title="Link to this heading">#</a></h2>
 <p>From a user perspective, the main challenge of working with object storage is the need
 to use more specialized tools, rather than just simple files / filenames, to manage data.
 Fortunately, excellent tools exist to make working with object storage easy and familiar.</p>
@@ -511,7 +517,7 @@ and Azure BLOB Storage.</p></li>
 <p>Each system has its own unique mechanisms for authentication and authorization;
 consult the documentation links above for more details.</p>
 <section id="reading-data">
-<h3>Reading Data<a class="headerlink" href="#reading-data" title="Permalink to this heading">#</a></h3>
+<h3>Reading Data<a class="headerlink" href="#reading-data" title="Link to this heading">#</a></h3>
 <p>When reading data from cloud object storage, you have two general options:</p>
 <ul class="simple">
 <li><p>Download the data to the local filesystem; this is fine for small data, but not suitable for
@@ -530,7 +536,7 @@ dataset from the AWS Public Data program using Xarray:</p>
 </div>
 </section>
 <section id="writing-data">
-<h3>Writing Data<a class="headerlink" href="#writing-data" title="Permalink to this heading">#</a></h3>
+<h3>Writing Data<a class="headerlink" href="#writing-data" title="Link to this heading">#</a></h3>
 <p>Writing data (and reading private data) requires credentials for authentication.
 2i2c does not provide credentials to individual users.
 Instead, 2i2c customers should manage their own cloud storage directly.
@@ -565,7 +571,7 @@ home directory and then use it as follows:</p>
 </section>
 </section>
 <section id="scratch-bucket">
-<h2>Scratch Bucket<a class="headerlink" href="#scratch-bucket" title="Permalink to this heading">#</a></h2>
+<h2>Scratch Bucket<a class="headerlink" href="#scratch-bucket" title="Link to this heading">#</a></h2>
 <p>Some 2i2c environments are configured with a “scratch bucket,” which
 allows you to temporarily store data (for example, when you need to store intermediate files during data transformations).
 Credentials to write to the scratch
@@ -595,7 +601,7 @@ the scratch bucket.</p>
 </div>
 </section>
 <section id="data-catalogs">
-<h2>Data Catalogs<a class="headerlink" href="#data-catalogs" title="Permalink to this heading">#</a></h2>
+<h2>Data Catalogs<a class="headerlink" href="#data-catalogs" title="Link to this heading">#</a></h2>
 <p>To make it easier to discover share data in your project, it is recommended to use
 data catalogs.
 <a class="reference external" href="https://intake.readthedocs.io/en/latest/">Intake</a> is a popular tool for making

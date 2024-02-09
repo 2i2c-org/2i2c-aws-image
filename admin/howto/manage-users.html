@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>User authentication and access &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'admin/howto/manage-users';</script>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../user/topics/data/cloud.html">Cloud Object Storage</a></li>
 </ul>
@@ -456,18 +462,18 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="user-authentication-and-access">
-<h1>User authentication and access<a class="headerlink" href="#user-authentication-and-access" title="Permalink to this heading">#</a></h1>
+<h1>User authentication and access<a class="headerlink" href="#user-authentication-and-access" title="Link to this heading">#</a></h1>
 <section id="authentication-vs-authorization">
-<h2>Authentication vs. Authorization<a class="headerlink" href="#authentication-vs-authorization" title="Permalink to this heading">#</a></h2>
+<h2>Authentication vs. Authorization<a class="headerlink" href="#authentication-vs-authorization" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Authentication</strong> allows your users to prove who their are.</p></li>
 <li><p><strong>Authorization</strong> gives users certain permissions depending on their identity (such as “access to your hub”, or “administrative privileges”).</p></li>
 </ul>
 <section id="authentication">
-<span id="admin-configuration-authentication"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Permalink to this heading">#</a></h3>
+<span id="admin-configuration-authentication"></span><h3>Authentication<a class="headerlink" href="#authentication" title="Link to this heading">#</a></h3>
 <p>Users can prove who they are by logging in via an <em>authentication provider</em>. Currently, the following providers are supported:</p>
 <section id="cilogon">
-<h4><a class="reference external" href="https://www.cilogon.org/">CILogon</a><a class="headerlink" href="#cilogon" title="Permalink to this heading">#</a></h4>
+<h4><a class="reference external" href="https://www.cilogon.org/">CILogon</a><a class="headerlink" href="#cilogon" title="Link to this heading">#</a></h4>
 <p>An extremely popular provider for various institutional logins, Google accounts (including &#64;gmail.com accounts), Microsoft accounts, etc. This is our <strong>primary</strong> authentication provider.
 It can support allowing users from multiple institutions to login as well, which is very helpful.
 2i2c can manage CILogon using the JupyterHub CILogonOAuthenticator.</p>
@@ -484,17 +490,17 @@ It can support allowing users from multiple institutions to login as well, which
 : Within an institution, each user is expected to have their own user account (e.g. <code class="docutils literal notranslate"><span class="pre">myname&#64;berkeley.edu</span></code>). This is the account that is used to give somebody an ID on their JupyterHub. This is entered on an Identity Provider’s login screen.</p>
 </section>
 <section id="github">
-<h4><a class="reference external" href="https://github.com/">GitHub</a><a class="headerlink" href="#github" title="Permalink to this heading">#</a></h4>
+<h4><a class="reference external" href="https://github.com/">GitHub</a><a class="headerlink" href="#github" title="Link to this heading">#</a></h4>
 <p>Extremely popular community of people creating, publishing and collaborating on code. Accounts are free, and many people already have them especially since the target community for most hubs are people who also write some kind of code. We can setup GitHub authentication so you can either manage a list of specific GitHub handles in the <a class="reference internal" href="#admin-management-admin-panel"><span class="std std-ref">JupyterHub admin panel</span></a>, or so that members of a specific GitHub organisation or team are automatically authorised to use the hub.</p>
 </section>
 <section id="a-different-provider">
-<h4><code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">different</span> <span class="pre">provider&gt;</span></code><a class="headerlink" href="#a-different-provider" title="Permalink to this heading">#</a></h4>
+<h4><code class="docutils literal notranslate"><span class="pre">&lt;a</span> <span class="pre">different</span> <span class="pre">provider&gt;</span></code><a class="headerlink" href="#a-different-provider" title="Link to this heading">#</a></h4>
 <p>We may be able to support other authentication providers, depending on your specific needs and the provider’s complexity. However, this should be used as a last resort and will come with an increase in management cost, to offset the extra engineering complexity. Please reach out to us if none of those above work for your use-case.</p>
 <p>We will ask you what provider you want when we set up the hub. We can change the provider after the fact, but only if absolutely necessary.</p>
 </section>
 </section>
 <section id="authorization">
-<h3>Authorization<a class="headerlink" href="#authorization" title="Permalink to this heading">#</a></h3>
+<h3>Authorization<a class="headerlink" href="#authorization" title="Link to this heading">#</a></h3>
 <p>Not everyone who can authenticate is granted access to the hub - that would mean
 everyone with a <code class="docutils literal notranslate"><span class="pre">&#64;gmail.com</span></code> account can log in if you use Google as your
 authentication provider! Instead, we support multiple ways for hub admins to
@@ -502,7 +508,7 @@ specify which users are <em>authorized</em> to be on the hub.</p>
 <p>Authorizing regular users
 : Currently, there are only three supported methods for authorizing regular users:</p>
 <ol class="arabic simple">
-<li><p><a class="reference internal" href="#"><span class="doc std std-doc">Manually add users</span></a> via the admin panel in JupyterHub</p></li>
+<li><p><a class="reference internal" href="#"><span class="std std-doc">Manually add users</span></a> via the admin panel in JupyterHub</p></li>
 <li><p>(Google only) Allow all users who are logged in via a particular domain - so
 you can allow access to anyone who is part of your organization or
 educational institution.</p></li>
@@ -524,14 +530,14 @@ have access to the Large and GPU machines. You can manage these teams within Git
 </section>
 </section>
 <section id="manage-users-from-the-administrator-panel">
-<span id="admin-management-admin-panel"></span><h2>Manage users from the administrator panel<a class="headerlink" href="#manage-users-from-the-administrator-panel" title="Permalink to this heading">#</a></h2>
+<span id="admin-management-admin-panel"></span><h2>Manage users from the administrator panel<a class="headerlink" href="#manage-users-from-the-administrator-panel" title="Link to this heading">#</a></h2>
 <p>The <strong>Administrator Panel</strong> can be used to maintain the list of users
 who are authorized to use your hub. You can access this panel by clicking
 the ‘Admin’ button in the top bar in your hub control panel.
 Alternatively, you can go to this URL in your browser:
 <code class="docutils literal notranslate"><span class="pre">https://&lt;your-hub-url&gt;/hub/admin</span></code></p>
 <section id="to-add-users">
-<h3>To add users<a class="headerlink" href="#to-add-users" title="Permalink to this heading">#</a></h3>
+<h3>To add users<a class="headerlink" href="#to-add-users" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
 <li><p>Click the <span class="guilabel">Add Users</span> button. The <span class="guilabel">Add Users</span> dialog box will pop up.</p></li>
 <li><p>Add one or more users, and hit the <span class="guilabel">Add Users</span> button to authorize all the users you just added.</p></li>
@@ -544,7 +550,7 @@ Alternatively, you can go to this URL in your browser:
 <figure class="align-default" id="id1">
 <img alt="../../_images/add-users-button.png" src="../../_images/add-users-button.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The <span class="guilabel">Add Users</span> button in the Administrator Panel.</span><a class="headerlink" href="#id1" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 5 </span><span class="caption-text">The <span class="guilabel">Add Users</span> button in the Administrator Panel.</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -556,7 +562,7 @@ Alternatively, you can go to this URL in your browser:
 <figure class="align-default" id="id2">
 <img alt="../../_images/add-users-form.png" src="../../_images/add-users-form.png" />
 <figcaption>
-<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Fill in usernames and optionally make them administrators. You can add multiple users at once by putting a username on each line.</span><a class="headerlink" href="#id2" title="Permalink to this image">#</a></p>
+<p><span class="caption-number">Fig. 6 </span><span class="caption-text">Fill in usernames and optionally make them administrators. You can add multiple users at once by putting a username on each line.</span><a class="headerlink" href="#id2" title="Link to this image">#</a></p>
 </figcaption>
 </figure>
 </div>
@@ -566,7 +572,7 @@ Alternatively, you can go to this URL in your browser:
 </div>
 </section>
 <section id="remove-users-from-a-hub">
-<h3>Remove users from a hub<a class="headerlink" href="#remove-users-from-a-hub" title="Permalink to this heading">#</a></h3>
+<h3>Remove users from a hub<a class="headerlink" href="#remove-users-from-a-hub" title="Link to this heading">#</a></h3>
 <p>You can revoke a user’s access to the JupyterHub by removing them from the allowed users list, using the admin panel.</p>
 <ol class="arabic simple">
 <li><p>Find the name of the user in your admin panel. If they have a running server,
@@ -578,7 +584,7 @@ the dialog box that pops up.</p></li>
 if you add them later, their files will still be present.</p>
 </section>
 <section id="finding-usernames">
-<h3>Finding usernames<a class="headerlink" href="#finding-usernames" title="Permalink to this heading">#</a></h3>
+<h3>Finding usernames<a class="headerlink" href="#finding-usernames" title="Link to this heading">#</a></h3>
 <p>Access is granted or revoked based on <code class="docutils literal notranslate"><span class="pre">usernames</span></code>, and these depend on the kind
 of <a class="reference internal" href="#admin-configuration-authentication"><span class="std std-ref">authentication provider</span></a> your hub is
 using. In general, it matches whatever the visible ‘username’ in your
@@ -602,11 +608,11 @@ how to determine their username.</p>
 </section>
 </section>
 <section id="debug-user-authentication-issues">
-<h2>Debug user authentication issues<a class="headerlink" href="#debug-user-authentication-issues" title="Permalink to this heading">#</a></h2>
+<h2>Debug user authentication issues<a class="headerlink" href="#debug-user-authentication-issues" title="Link to this heading">#</a></h2>
 <p>If users are running into strange errors when they log in (for example CILogon error pages that say “Looks like something went wrong!”), ask them to try these steps in debugging:</p>
 <ol class="arabic simple">
 <li><p>Try logging in with an <code class="docutils literal notranslate"><span class="pre">incognito</span></code> window. This will help determine if their issue is due to some cookie / cache that is stored on their machine.</p></li>
-<li><p>Ask them to clear their cookies / cache for all CILogon websites. For example, <a class="reference external" href="https://support.google.com/chrome/answer/95647?hl=en&amp;co=GENIE.Platform%3DDesktop">here are the Google Chrome instructions to clear cookies</a>.</p></li>
+<li><p>Ask them to clear their cookies / cache for all CILogon websites. For example, <a class="reference external" href="https://support.google.com/chrome/answer/95647?hl=en&amp;amp;co=GENIE.Platform%3DDesktop">here are the Google Chrome instructions to clear cookies</a>.</p></li>
 <li><p>If using <code class="docutils literal notranslate"><span class="pre">CILogon</span></code>, double-check that they’ve signed in with the correct account, and <a class="reference external" href="https://infrastructure.2i2c.org/en/latest/howto/configure/auth-management.html#switch-identity-providers-or-user-accounts">ask them to switch accounts if needed</a>.</p></li>
 </ol>
 </section>

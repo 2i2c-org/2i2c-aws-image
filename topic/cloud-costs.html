@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Estimate cloud costs &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,39 +28,35 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
-    <script src="../_static/jquery.js"></script>
-    <script src="../_static/underscore.js"></script>
-    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../_static/doctools.js"></script>
-    <script src="../_static/clipboard.min.js"></script>
-    <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'topic/cloud-costs';</script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../user/topics/data/index.html">Data and Filesystem</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../user/topics/data/filesystem.html">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../user/topics/data/git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user/topics/data/sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../user/topics/data/cloud.html">Cloud Object Storage</a></li>
 </ul>
@@ -447,11 +453,11 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="estimate-cloud-costs">
-<span id="costs-cloud"></span><h1>Estimate cloud costs<a class="headerlink" href="#estimate-cloud-costs" title="Permalink to this heading">#</a></h1>
+<span id="costs-cloud"></span><h1>Estimate cloud costs<a class="headerlink" href="#estimate-cloud-costs" title="Link to this heading">#</a></h1>
 <p>We pass through cloud costs directly to our communities in a transparent manner.
 This encourages us to continually reduce the cloud costs for our communities, and helps them understand how their decisions affect their cloud bill.</p>
 <section id="what-components-make-up-my-cloud-bill">
-<h2>What components make up my cloud bill<a class="headerlink" href="#what-components-make-up-my-cloud-bill" title="Permalink to this heading">#</a></h2>
+<h2>What components make up my cloud bill<a class="headerlink" href="#what-components-make-up-my-cloud-bill" title="Link to this heading">#</a></h2>
 <p>There are a few kinds of infrastructure that make up your cloud bill.
 Here is a short summary:</p>
 <ul class="simple">
@@ -463,7 +469,7 @@ Here is a short summary:</p>
 <p>There are some other components that go into your cloud bill (e.g., “networking costs”) but these are the major pieces.</p>
 </section>
 <section id="user-actions-that-impact-cloud-costs">
-<h2>User actions that impact cloud costs<a class="headerlink" href="#user-actions-that-impact-cloud-costs" title="Permalink to this heading">#</a></h2>
+<h2>User actions that impact cloud costs<a class="headerlink" href="#user-actions-that-impact-cloud-costs" title="Link to this heading">#</a></h2>
 <p>Cloud costs depend on a few key factors that you and your community has control over.
 Here we list some major considerations (in decreasing order of importance):</p>
 <ul class="simple">
@@ -475,7 +481,7 @@ Here we list some major considerations (in decreasing order of importance):</p>
 </ul>
 </section>
 <section id="estimate-my-cloud-costs">
-<h2>Estimate my cloud costs<a class="headerlink" href="#estimate-my-cloud-costs" title="Permalink to this heading">#</a></h2>
+<h2>Estimate my cloud costs<a class="headerlink" href="#estimate-my-cloud-costs" title="Link to this heading">#</a></h2>
 <p>The following is a very rough guideline to follow in order to understand and estimate what your cloud costs might be.
 These are similar whether you’re using 2i2c to manage your hub, or running it yourself.</p>
 <p>Generally speaking, <strong>the biggest technical driver of cloud costs is user memory (RAM)</strong>.
@@ -507,19 +513,19 @@ We now need twice the number of nodes to handle the same number of users.
 <p>We recommend checking out the following resources to learn more about cloud costs.
 None of these are guarantees about costs, but should give you a general idea.</p>
 <ul class="simple">
-<li><p>For general information and explanation, see <span class="xref myst">the Zero to JupyterHub cost projection documentation</span>.</p></li>
+<li><p>For general information and explanation, see <a class="reference internal" href="#z2jh:cost"><span class="xref myst">the Zero to JupyterHub cost projection documentation</span></a>.</p></li>
 <li><p>For educational or “lightweight resources” hubs, see <a class="reference external" href="https://nbviewer.jupyter.org/github/berkeley-dsep-infra/datahub-usage-analysis/blob/master/notebooks/03-visualize-cost-and-usage.ipynb">this rough cost analysis notebook from the UC Berkeley DataHub</a>.</p></li>
 <li><p>For data- and compute-intensive hubs, see the Pangeo two-part series on their Kubernetes costs. (<a class="reference external" href="https://medium.com/pangeo/pangeo-cloud-costs-part1-f89842da411d">part 1 link</a>, <a class="reference external" href="https://medium.com/pangeo/pangeo-cloud-cluster-design-9d58a1bf1ad3">part 2 link</a>)</p></li>
 </ul>
 </div>
 </section>
 <section id="how-we-estimate-cloud-costs-for-communities">
-<h2>How we estimate cloud costs for communities<a class="headerlink" href="#how-we-estimate-cloud-costs-for-communities" title="Permalink to this heading">#</a></h2>
+<h2>How we estimate cloud costs for communities<a class="headerlink" href="#how-we-estimate-cloud-costs-for-communities" title="Link to this heading">#</a></h2>
 <p>The previous sections give a high-level overview of how to think about cloud costs and how they’ll reflect your community’s usage.
 This section describes how the 2i2c team calculates cloud costs and passes this on to communities.</p>
 <p>Over time, we will refine this process to make it more precise and (as much as possible) directly tied to the usage a community incurs.</p>
 <section id="shared-kubernetes-clusters">
-<h3>Shared kubernetes clusters<a class="headerlink" href="#shared-kubernetes-clusters" title="Permalink to this heading">#</a></h3>
+<h3>Shared kubernetes clusters<a class="headerlink" href="#shared-kubernetes-clusters" title="Link to this heading">#</a></h3>
 <p>For hubs that run on <strong>shared Kubernetes clusters</strong>, we estimate their cloud costs via the following process:</p>
 <ol class="arabic simple">
 <li><p>Calculate the monthly cloud bill for this cluster.</p></li>
@@ -528,7 +534,7 @@ This section describes how the 2i2c team calculates cloud costs and passes this 
 </ol>
 </section>
 <section id="dedicated-kubernetes-clusters">
-<h3>Dedicated kubernetes clusters<a class="headerlink" href="#dedicated-kubernetes-clusters" title="Permalink to this heading">#</a></h3>
+<h3>Dedicated kubernetes clusters<a class="headerlink" href="#dedicated-kubernetes-clusters" title="Link to this heading">#</a></h3>
 <p>For hubs that run on a <strong>dedicated Kubernetes cluster</strong>, a cloud bill will be generated by the cloud provider, 2i2c will pay it in advance, and we will include this cost in the next month’s invoice.
 This will exactly reflect the cloud charges incurred by the hub in that time.</p>
 </section>

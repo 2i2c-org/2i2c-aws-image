@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html lang="en" data-content_root="" >
+<html lang="en" data-content_root="../../../" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>Filesystem and user directory &#8212; 2i2c Community Showcase Handbook</title>
   
@@ -29,43 +28,39 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
 <link rel="preload" as="script" href="../../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
   <script src="../../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
 
-    <script data-url_root="../../../" id="documentation_options" src="../../../_static/documentation_options.js"></script>
-    <script src="../../../_static/jquery.js"></script>
-    <script src="../../../_static/underscore.js"></script>
-    <script src="../../../_static/_sphinx_javascript_frameworks_compat.js"></script>
-    <script src="../../../_static/doctools.js"></script>
-    <script src="../../../_static/clipboard.min.js"></script>
-    <script src="../../../_static/copybutton.js"></script>
-    <script src="../../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script src="../../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../../_static/togglebutton.js"></script>
+    <script src="../../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../../_static/sphinx-thebe.js"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'user/topics/data/filesystem';</script>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
-    <link rel="next" title="Use Git / GitHub" href="git.html" />
+    <link rel="next" title="Move code in and out of the hub with GitHub" href="git.html" />
     <link rel="prev" title="Data and Filesystem" href="index.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -160,7 +155,18 @@ const thebe_selector_output = ".output, .cell_output"
   
   
 </a></div>
-        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         
         <ul class="nav bd-sidenav bd-sidenav__home-link">
@@ -196,7 +202,7 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="index.html">Data and Filesystem</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">Filesystem and user directory</a></li>
-<li class="toctree-l2"><a class="reference internal" href="git.html">Use Git / GitHub</a></li>
+<li class="toctree-l2"><a class="reference internal" href="git.html">Move code in and out of the hub with GitHub</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sharing.html">Share data files with your users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="cloud.html">Cloud Object Storage</a></li>
 </ul>
@@ -445,7 +451,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="filesystem-and-user-directory">
-<h1>Filesystem and user directory<a class="headerlink" href="#filesystem-and-user-directory" title="Permalink to this heading">#</a></h1>
+<h1>Filesystem and user directory<a class="headerlink" href="#filesystem-and-user-directory" title="Link to this heading">#</a></h1>
 <p>Your notebook server is a linux “virtual machine” with its own filesystem.
 You are not on a shared server; you are on your own private server.</p>
 <p>The easiest way to move files in and out of your home directory is via the JupyterLab web interface.
@@ -453,7 +459,7 @@ Drag a file into the file browser to upload, and right-click to download back ou
 You can also open a terminal via the JupyterLab launcher and use this to ssh / scp / ftp to remote systems.
 However, you can’t ssh in!</p>
 <section id="your-home-directory">
-<h2>Your Home Directory<a class="headerlink" href="#your-home-directory" title="Permalink to this heading">#</a></h2>
+<h2>Your Home Directory<a class="headerlink" href="#your-home-directory" title="Link to this heading">#</a></h2>
 <p>Your username is <code class="docutils literal notranslate"><span class="pre">jovyan</span></code>, and your home directory is <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code>.
 This is the same for all users, but no one else can see or access the files in <em>your</em> home directory.</p>
 <p><code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> is a persistant network-attached drive. Any files you put there will be there when you
@@ -462,7 +468,7 @@ log out and log back into the JupyterHub.</p>
 only for notebooks, analysis scripts, and small datasets (&lt; 1 GB). It is not an appropriate place to store
 large datasets.</p>
 <section id="modify-your-bash-profile">
-<h3>Modify your bash profile<a class="headerlink" href="#modify-your-bash-profile" title="Permalink to this heading">#</a></h3>
+<h3>Modify your bash profile<a class="headerlink" href="#modify-your-bash-profile" title="Link to this heading">#</a></h3>
 <p>You may edit your bash profile at <code class="docutils literal notranslate"><span class="pre">~/.bash_profile</span></code>.
 However, <strong>be careful</strong> because some edits may have unanticipated consequences.
 For example, if you change your shell such that it can no longer launch a Jupyter Server, then your session will fail to start.
@@ -472,14 +478,14 @@ If your session can no longer start, <a class="reference internal" href="../../.
 </section>
 </section>
 <section id="the-shared-directory">
-<h2>The <code class="docutils literal notranslate"><span class="pre">shared</span></code> Directory<a class="headerlink" href="#the-shared-directory" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">shared</span></code> Directory<a class="headerlink" href="#the-shared-directory" title="Link to this heading">#</a></h2>
 <p>All users have a directory called <code class="docutils literal notranslate"><span class="pre">shared</span></code> in their home directory.
 This is a <em>readonly</em> directory - anybody on the hub can <em>access</em> and <em>read from</em> the <code class="docutils literal notranslate"><span class="pre">shared</span></code> directory.
 The hub administrator may choose to distribute shared materials via this directory.
 The <code class="docutils literal notranslate"><span class="pre">shared</span></code> directory is not intended as a way for hub users to share data with each other.</p>
 </section>
 <section id="the-tmp-directory">
-<h2>The <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> Directory<a class="headerlink" href="#the-tmp-directory" title="Permalink to this heading">#</a></h2>
+<h2>The <code class="docutils literal notranslate"><span class="pre">/tmp</span></code> Directory<a class="headerlink" href="#the-tmp-directory" title="Link to this heading">#</a></h2>
 <p>Any directory outside of <code class="docutils literal notranslate"><span class="pre">/home/jovyan</span></code> is emphemeral on Cloud-hosted JupyterHubs. This means if you
 add data or scripts under a writeable directory like <code class="docutils literal notranslate"><span class="pre">/tmp/myfile.txt</span></code> <em>it will not be there when you
 log out and log back in</em>.</p>
@@ -533,7 +539,7 @@ larger than <code class="docutils literal notranslate"><span class="pre">/home/j
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title">Use Git / GitHub</p>
+        <p class="prev-next-title">Move code in and out of the hub with GitHub</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
